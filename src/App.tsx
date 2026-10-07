@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useRouter } from '@/hooks/useRouter';
 import { useReactions } from '@/hooks/useReactions';
 import { Header } from '@/components/Header';
@@ -9,11 +10,33 @@ import { SearchPage } from '@/pages/SearchPage';
 import { VideosPage } from '@/pages/VideosPage';
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setShowSplash(false), 1400);
+    return () => window.clearTimeout(timer);
+  }, []);
+
   const { route, navigate } = useRouter();
   const { hasReacted, toggleReaction } = useReactions();
 
-  return (
-    <div className="min-h-screen bg-white flex flex-col">
+ 
+return (
+   <> 
+  {showSplash && (
+  <div className="porzhali-splash" aria-label="ПОРЖАЛИ">
+    <div className="porzhali-splash-emoji porzhali-splash-emoji-left">😂</div>
+
+    <div className="porzhali-splash-card">
+      <div className="porzhali-splash-logo">ПОРЖАЛИ</div>
+      <div className="porzhali-splash-text">Здесь смеются каждый день</div>
+    </div>
+
+    <div className="porzhali-splash-emoji porzhali-splash-emoji-right">🤣</div>
+    <div className="porzhali-splash-emoji porzhali-splash-emoji-bottom">🔥</div>
+  </div>
+)}
+     <div className="min-h-screen bg-white flex flex-col">
       <Header currentRoute={route} onNavigate={navigate} />
 
       <main className="flex-1">
@@ -52,7 +75,8 @@ function App() {
 
       <Footer onNavigate={navigate} />
     </div>
-  );
+ </>
+     );
 }
 
 export default App;
