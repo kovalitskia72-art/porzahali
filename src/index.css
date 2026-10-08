@@ -818,7 +818,8 @@
   .porzhali-splash-emoji {
     animation: none;
   }
-/* Живая заставка ПОРЖАЛИ */
+}
+ /* Живая заставка ПОРЖАЛИ */
 
 .porzhali-splash {
   position: fixed;
