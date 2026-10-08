@@ -46,7 +46,9 @@ export const posts: Post[] = [
     readTime: 2,
     views: 2013,
     reactions: { like: 567, funny: 1203, fire: 789, wow: 134 },
-    visual: { type: 'gradient', text: '📧', gradient: 'from-emerald-400 to-teal-600' },
+    
+visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/images/kot-nachalnik.png' },
+
     featured: true,
   },
   {
