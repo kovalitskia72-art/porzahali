@@ -20,9 +20,10 @@ export interface Post {
   views: number;
   reactions: ReactionCounts;
   visual: {
-    type: 'gradient' | 'meme' | 'chat';
+  type: 'gradient' | 'meme' | 'chat' | 'image';
     text: string;
-    gradient: string;
+  gradient: string;
+  imageUrl?: string; 
   };
   featured?: boolean;
 }
