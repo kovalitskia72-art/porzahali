@@ -11,6 +11,19 @@ export function PostVisual({
   const cat = getCategory(post.category);
   const altText = `Иллюстрация: ${post.title}`;
 
+if (post.visual.type === 'image' && post.visual.imageUrl) {
+  return (
+    <div className={`relative overflow-hidden ${className}`}>
+      <img
+        src={post.visual.imageUrl}
+        alt={altText}
+        loading="lazy"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  );
+}
+
   if (post.visual.type === 'chat') {
     return (
       <div
