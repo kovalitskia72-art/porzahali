@@ -787,4 +787,31 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     reactions: { like: 2345, funny: 1567, fire: 456, wow: 123 },
     visual: { type: 'gradient', text: '⏰', gradient: 'from-indigo-400 to-blue-600' },
   },
+
+  {
+    id: '31',
+    category: 'zhizn',
+    title: 'Мой идеальный план на выходные 😂',
+    description: 'Ничего не делать, вкусно есть и отдыхать. Главное — не нарушать план!',
+    content: [
+      'План на выходные:',
+      '1. Выспаться.',
+      '2. Вкусно позавтракать.',
+      '3. Ничего не делать.',
+      '4. Отдохнуть от ничего не делания.',
+      '5. Повторить в воскресенье.',
+      'Понедельник? Давайте не будем о грустном! 😂',
+    ],
+    date: '2026-10-13',
+    readTime: 1,
+    views: 0,
+    reactions: { like: 0, funny: 0, fire: 0, wow: 0 },
+    visual: {
+      type: 'image',
+      text: '🏖️',
+      gradient: '',
+      imageUrl: '/porzahali/images/plan-vyhodnye.png',
+    },
+  },
+
 ];
