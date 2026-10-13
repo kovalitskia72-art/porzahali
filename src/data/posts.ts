@@ -810,7 +810,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
       type: 'image',
       text: '🏖️',
       gradient: '',
-      imageUrl: '/porzahali/images/plan-vyhodnye.png',
+    imageUrl: '/porzahali/images/plan-vyhodnye.png.png',
     },
   },
 
