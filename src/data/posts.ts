@@ -814,4 +814,28 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     },
   },
 
+
+  {
+    id: '32',
+    category: 'zhizn',
+    title: 'Зарплата пришла — зарплата ушла 😂',
+    description: 'Самые короткие отношения в моей жизни — с зарплатой!',
+    content: [
+      'Утро: Ура! Зарплата пришла!',
+      'Обед: Коммуналка, кредит, продукты, бензин...',
+      'Вечер: А где деньги?',
+      'Банк: Спасибо, что были с нами!',
+      'До следующей зарплаты ещё целый месяц. 😂',
+    ],
+    date: '2026-10-14',
+    readTime: 1,
+    views: 0,
+    reactions: { like: 0, funny: 0, fire: 0, wow: 0 },
+    visual: {
+      type: 'image',
+      text: '💸',
+      gradient: '',
+      imageUrl: '/porzahali/images/zarplata.png',
+    },
+  },
 ];
