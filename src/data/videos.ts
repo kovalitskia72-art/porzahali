@@ -42,4 +42,15 @@ export const videos: HumorVideo[] = [
     emoji: '😅',
     featured: true,
   },
+
+  {
+    id: 'volk-zayac-01',
+    title: 'Волк и Заяц — Серия 1. Выборы',
+    description: 'Первая серия городского юмористического мультсериала про Волка и Зайца.',
+    url: 'https://youtu.be/ZakbKsQnD3g',
+    source: 'youtube',
+    date: '2026-10-14',
+    emoji: '🐺',
+    featured: true,
+  },
 ];
