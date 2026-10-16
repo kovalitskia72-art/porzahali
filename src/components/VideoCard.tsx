@@ -44,7 +44,16 @@ export function VideoCard({ video, removable, onRemove }: { video: HumorVideo; r
   rel="noopener noreferrer"
 
 className="w-full h-full flex flex-col items-center justify-center gap-3 bg-red-600 bg-cover bg-center text-white font-bold text-xl"
-style={video.id === 'volk-zayac-01' ? { backgroundImage: "linear-gradient(#0005, #0008), url('/porzahali/images/Волк и Заяц_ Выборы в городе.png')" } : undefined}
+
+style={{
+  backgroundImage:
+    video.id === 'volk-zayac-01'
+      ? "linear-gradient(#0005, #0008), url('/porzahali/images/Волк и Заяц_ Выборы в городе.png')"
+      : video.id === 'volk-zayac-02'
+      ? "linear-gradient(#0005, #0008), url('/porzahali/images/Волк и Заяц_ победа после выборов (1).png')"
+      : undefined
+}}
+
 
 >
   <Play size={48} fill="currentColor" />
