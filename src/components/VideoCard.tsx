@@ -37,14 +37,17 @@ export function VideoCard({ video, removable, onRemove }: { video: HumorVideo; r
             aria-label={video.title}
           />
         ) : video.source === 'youtube' ? (
-          <iframe
-            src={video.url}
-            title={video.title}
-            className="w-full h-full"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
+  
+<a
+  href={video.url.replace('youtube.com/embed/', 'youtube.com/watch?v=')}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full h-full flex flex-col items-center justify-center gap-3 bg-red-600 text-white font-bold text-xl"
+>
+  <Play size={48} fill="currentColor" />
+  Смотреть на YouTube
+</a>
+
         ) : (
           <a href={video.url} target="_blank" rel="noopener noreferrer" className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-orange-500 to-amber-500 text-white p-6 text-center">
             <span className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-3">
