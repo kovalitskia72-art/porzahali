@@ -74,7 +74,12 @@ export function useVideos() {
     setUserVideos(readSavedVideos());
 
     loadVideosFromSupabase()
-      .then(setRemoteVideos)
+     .then((loadedVideos) => setRemoteVideos([
+  ...builtInVideos,
+  ...loadedVideos.filter(
+    (video) => !builtInVideos.some((item) => item.id === video.id)
+  ),
+]))
       .catch((error) => {
         console.error('Не удалось загрузить видео из Supabase:', error);
         setRemoteVideos(builtInVideos);
