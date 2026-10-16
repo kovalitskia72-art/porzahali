@@ -53,4 +53,15 @@ export const videos: HumorVideo[] = [
     emoji: '🐺',
     featured: true,
   },
+
+  {
+    id: 'volk-zayac-02',
+    title: 'Волк и Заяц — Серия 2. После выборов',
+    description: 'Продолжение юмористического мультсериала. А что мы выиграли?',
+    url: 'https://youtu.be/tknTiVpWVUs',
+    source: 'youtube',
+    date: '2026-10-15',
+    emoji: '🐺',
+    featured: true,
+  },
 ];
