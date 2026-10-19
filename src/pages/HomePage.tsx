@@ -128,7 +128,9 @@ export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
               {featured.map((post, i) => (
                 <a
                   key={post.id}
-                  href={buildHash({ name: 'post', id: post.id })}
+                
+href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: post.id })}
+
                   className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 ${
                     i === 0 ? 'col-span-2' : ''
                   }`}
@@ -147,7 +149,9 @@ export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
 
                   <div className="p-3">
                     <h3 className="font-bold text-sm text-gray-900 line-clamp-1 group-hover:text-orange-600 transition-colors">
-                      {post.title}
+                    
+{i === 0 ? 'Волк и Заяц — Серия 1. Выборы' : post.title}
+
                     </h3>
                     <p className="text-xs text-gray-400 mt-1">
                       😂 {post.reactions.funny} · ❤️ {post.reactions.like}
