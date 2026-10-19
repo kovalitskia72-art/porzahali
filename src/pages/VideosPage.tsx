@@ -34,11 +34,42 @@ export function VideosPage() {
           <span className="text-xs font-semibold text-gray-400 bg-white border border-gray-100 rounded-full px-2.5 py-1">{videos.length}</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {videos.map((video) => (
-            <VideoCard key={video.id} video={video} removable={userVideos.some((item) => item.id === video.id)} onRemove={() => removeVideo(video.id)} />
-          ))}
-        </div>
+      
+<h2 className="text-2xl font-black mb-5">
+  🐺🐰 Волк и Заяц — мультсериал
+</h2>
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+  {videos
+    .filter((video) => video.id.startsWith('volk-zayac-'))
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .map((video) => (
+      <VideoCard
+        key={video.id}
+        video={video}
+        removable={userVideos.some((item) => item.id === video.id)}
+        onRemove={() => removeVideo(video.id)}
+      />
+    ))}
+</div>
+
+<h2 className="text-2xl font-black mb-5">
+  😂 Другие смешные видео
+</h2>
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+  {videos
+    .filter((video) => !video.id.startsWith('volk-zayac-'))
+    .map((video) => (
+      <VideoCard
+        key={video.id}
+        video={video}
+        removable={userVideos.some((item) => item.id === video.id)}
+        onRemove={() => removeVideo(video.id)}
+      />
+    ))}
+</div>
+
 
         <div className="mt-10 rounded-2xl bg-white border border-gray-100 p-5 sm:p-7">
           <h3 className="font-black text-gray-900 text-lg">Как будем обновлять раздел</h3>
