@@ -1,5 +1,6 @@
 
 import { useMemo, useState, useRef } from 'react';
+
 import { posts as allPosts } from '@/data/posts';
 import { categories, siteConfig } from '@/config/site';
 import type { CategoryId } from '@/config/site';
@@ -428,7 +429,56 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
         </div>
       </section>
 
-      {/* Subscribe */}
+    
+{/* Волк и Заяц — мультсериал */}
+<section className="max-w-7xl mx-auto px-4 py-12">
+  <h2 className="text-3xl font-black mb-3">
+    🐺🐰 Волк и Заяц — наш мультсериал
+  </h2>
+  <p className="text-gray-600 mb-6">
+    Два героя, большие амбиции и смешные приключения!
+  </p>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {[
+      {
+        title: 'Серия 1. Выборы',
+        image: '/porzahali/images/Волк и Заяц_ Выборы в городе.png',
+        url: 'https://youtu.be/ZakbKsQnD3g'
+      },
+      {
+        title: 'Серия 2. После выборов',
+        image: '/porzahali/images/Волк и Заяц_ победа после выборов (1).png',
+        url: 'https://youtu.be/tknTiVpWVUs'
+      }
+    ].map((episode) => (
+      <a
+        key={episode.url}
+        href={episode.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <img
+          src={episode.image}
+          alt={episode.title}
+          className="w-full aspect-video object-cover"
+        />
+        <div className="p-5 font-bold text-lg">
+          ▶ {episode.title}
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <a
+    href="/porzahali/#/videos"
+    className="mt-8 inline-block bg-orange-600 text-white font-bold px-6 py-3 rounded-xl"
+  >
+    Смотреть все серии →
+  </a>
+</section>
+  {/* Subscribe */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
         <div className="relative overflow-hidden bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 text-center">
           <div className="absolute inset-0 opacity-20"
