@@ -1,3 +1,4 @@
+
 import { useMemo, useState, useRef } from 'react';
 import { posts as allPosts } from '@/data/posts';
 import { categories, siteConfig } from '@/config/site';
@@ -133,7 +134,17 @@ export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
                   }`}
                   style={{ animation: `fadeInUp 0.6s ease-out ${i * 0.15}s both` }}
                 >
-                  <PostVisual post={post} className="aspect-[16/9] w-full" />
+                 
+{i === 0 ? (
+  <img
+    src="/porzahali/images/Волк и Заяц_ Выборы в городе.png"
+    alt="Волк и Заяц — Выборы"
+    className="aspect-[16/9] w-full object-cover"
+  />
+) : (
+  <PostVisual post={post} className="aspect-[16/9] w-full" />
+)}
+
                   <div className="p-3">
                     <h3 className="font-bold text-sm text-gray-900 line-clamp-1 group-hover:text-orange-600 transition-colors">
                       {post.title}
