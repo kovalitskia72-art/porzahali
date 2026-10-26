@@ -22,7 +22,7 @@ const reactionConfig: {
 
 function ReactionBarBase({ post, hasReacted, onReact, compact }: Props) {
   return (
-    <div className={`flex flex-wrap items-center gap-1.5 ${compact ? 'mt-3 pt-3 border-t border-gray-100' : 'mt-4'}`}>
+    <div className={`flex min-w-0 flex-wrap items-center ${compact ? 'gap-x-0.5 gap-y-1' : 'mt-4 gap-1.5'}`} aria-label="Реакции">
       {reactionConfig.map(({ type, emoji, label, color }) => {
         const active = hasReacted(post.id, type);
         const count = post.reactions[type] + (active ? 1 : 0);
@@ -34,15 +34,15 @@ function ReactionBarBase({ post, hasReacted, onReact, compact }: Props) {
               e.stopPropagation();
               onReact(post.id, type);
             }}
-            className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium transition-all duration-200 active:scale-90 ${
+            className={`inline-flex min-h-9 items-center justify-center gap-1 rounded-full font-medium transition-all duration-200 active:scale-90 ${compact ? 'px-1.5 py-1 text-[11px]' : 'px-2.5 py-1 text-xs'} ${
               active
                 ? `${color} bg-gray-50 ring-1 ring-current/20`
                 : 'text-gray-400 hover:bg-gray-50 hover:text-gray-600'
             }`}
-            aria-label={label}
+            aria-label={`${label}: ${count}`}
             aria-pressed={active}
           >
-            <span className={`text-sm transition-transform duration-200 ${active ? 'scale-125' : 'scale-100'}`}>
+            <span aria-hidden="true" className={`transition-transform duration-200 ${compact ? 'text-[13px]' : 'text-sm'} ${active ? 'scale-125' : 'scale-100'}`}>
               {emoji}
             </span>
             <span className="tabular-nums">{count}</span>
