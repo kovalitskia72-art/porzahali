@@ -195,7 +195,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 4432,
     reactions: { like: 345, funny: 567, fire: 234, wow: 678 },
-    visual: { type: 'image', text: '🧠', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-philosophical-queue.svg' },
+    visual: { type: 'image', text: '🧠', gradient: 'from-indigo-400 to-blue-600', imageUrl: 'https://images.pexels.com/photos/3848898/pexels-photo-3848898.jpeg?auto=compress&cs=tinysrgb&w=1000', imageFallbackUrl: '/porzahali/images/life-philosophical-queue.svg', overlayTitle: 'ОЧЕРЕДЬ ДЕЛАЕТ', overlayAccent: 'ИЗ НАС ФИЛОСОФОВ' },
   },
   {
     id: '9',
@@ -382,7 +382,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 1169,
     reactions: { like: 456, funny: 1234, fire: 345, wow: 567 },
-    visual: { type: 'image', text: '🛒', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-supermarket-queue.svg' },
+    visual: { type: 'image', text: '🛒', gradient: 'from-indigo-400 to-blue-600', imageUrl: 'https://images.pexels.com/photos/36772947/pexels-photo-36772947.jpeg?auto=compress&cs=tinysrgb&w=1000', imageFallbackUrl: '/porzahali/images/life-supermarket-queue.svg', overlayTitle: 'ВЫБРАЛ КАССУ', overlayAccent: 'САМУЮ МЕДЛЕННУЮ' },
   },
   {
     id: '16',
@@ -593,7 +593,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 4487,
     reactions: { like: 1234, funny: 890, fire: 567, wow: 234 },
-    visual: { type: 'image', text: '🏃', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-gym-after-35.svg' },
+    visual: { type: 'image', text: '🏃', gradient: 'from-indigo-400 to-blue-600', imageUrl: 'https://images.pexels.com/photos/4162544/pexels-photo-4162544.jpeg?auto=compress&cs=tinysrgb&w=1000', imageFallbackUrl: '/porzahali/images/life-gym-after-35.svg', overlayTitle: 'СПОРТ ПОСЛЕ 35', overlayAccent: 'ГДЕ МОЙ ДИВАН?' },
   },
   {
     id: '24',
@@ -785,7 +785,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 2798,
     reactions: { like: 2345, funny: 1567, fire: 456, wow: 123 },
-    visual: { type: 'image', text: '⏰', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-mom-calls-eight.svg' },
+    visual: { type: 'image', text: '⏰', gradient: 'from-indigo-400 to-blue-600', imageUrl: 'https://images.pexels.com/photos/8070512/pexels-photo-8070512.jpeg?auto=compress&cs=tinysrgb&w=1000', imageFallbackUrl: '/porzahali/images/life-mom-calls-eight.svg', overlayTitle: 'МАМА ЗВОНИТ', overlayAccent: 'В 8 УТРА!' },
   },
 
   {
