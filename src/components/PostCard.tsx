@@ -30,28 +30,28 @@ function PostCardBase({ post, hasReacted, onReact }: Props) {
   const cat = getCategory(post.category);
 
   return (
-    <article className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+    <article className="group flex flex-col overflow-hidden rounded-3xl border border-orange-100/80 bg-white shadow-md shadow-gray-200/60 transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-100/80">
       <a
         href={buildHash({ name: 'post', id: post.id })}
-        className="block relative"
+        className="relative block overflow-hidden"
       >
         <PostVisual post={post} className="aspect-[16/10] w-full" />
-        <div className="absolute top-3 left-3">
-          <span className="inline-flex items-center gap-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm">
+        <div className="absolute left-3 top-3">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/95 px-3 py-1.5 text-xs font-extrabold text-gray-800 shadow-md backdrop-blur-sm">
             {cat?.emoji} {cat?.label}
           </span>
         </div>
       </a>
-      <div className="flex flex-col flex-1 p-4">
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
         <a href={buildHash({ name: 'post', id: post.id })}>
-          <h3 className="font-bold text-lg leading-tight text-gray-900 group-hover:text-orange-600 transition-colors line-clamp-2">
+          <h3 className="line-clamp-2 text-lg font-extrabold leading-snug tracking-tight text-gray-900 transition-colors group-hover:text-orange-600">
             {post.title}
           </h3>
         </a>
-        <p className="mt-2 text-sm text-gray-500 line-clamp-2 flex-1">
+        <p className="mt-2 line-clamp-2 flex-1 text-sm leading-relaxed text-gray-500">
           {post.description}
         </p>
-        <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
+        <div className="mt-4 flex items-center justify-between text-xs font-medium text-gray-400">
           <span>{formatDate(post.date)}</span>
           <span className="inline-flex items-center gap-1">
             <Eye size={14} />
@@ -66,11 +66,11 @@ function PostCardBase({ post, hasReacted, onReact }: Props) {
         />
         <a
           href={buildHash({ name: 'post', id: post.id })}
-          className="mt-3 inline-flex items-center justify-center gap-1.5 bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-600 text-sm font-semibold py-2.5 rounded-xl transition-colors"
+          className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-orange-100 bg-orange-50 px-4 py-3 text-sm font-extrabold text-orange-700 transition-all group-hover:border-orange-500 group-hover:bg-orange-500 group-hover:text-white"
           aria-label={`Читать: ${post.title}`}
         >
-          Читать
-          <ArrowRight size={16} />
+          Читать полностью
+          <ArrowRight size={17} />
         </a>
       </div>
     </article>
