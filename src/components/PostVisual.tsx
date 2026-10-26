@@ -22,7 +22,7 @@ export function PostVisual({
         />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-gray-950/50 to-transparent" />
         <span className="absolute bottom-3 right-3 rounded-full border border-white/30 bg-gray-950/50 px-2.5 py-1 text-[10px] font-black tracking-wide text-white backdrop-blur-sm">
-          ПОРЖАЛИ · ФОТО
+          {post.visual.imageUrl.endsWith('.svg') ? 'ПОРЖАЛИ · АРТ' : 'ПОРЖАЛИ · ФОТО'}
         </span>
       </div>
     );
