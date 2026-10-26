@@ -13,6 +13,16 @@ export interface HumorVideo {
 
 export const videos: HumorVideo[] = [
   {
+    id: 'humor-shorts-bunvjven8u8',
+    title: 'Новый Shorts — находка №2',
+    description: 'Ещё один короткий ролик для подборки «ПОРЖАЛИ». Смотреть на YouTube.',
+    url: 'https://www.youtube.com/shorts/BUNvJveN8U8',
+    source: 'youtube',
+    date: '2026-10-26',
+    emoji: '🔥',
+    featured: true,
+  },
+  {
     id: 'humor-shorts-ut8foumls9y',
     title: 'Новый Shorts — находка дня',
     description: 'Короткий ролик, присланный для подборки «ПОРЖАЛИ». Смотреть на YouTube.',
