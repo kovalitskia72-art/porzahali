@@ -65,10 +65,93 @@ async function loadVideosFromSupabase(): Promise<HumorVideo[]> {
   return data.map(convertDatabaseVideo);
 }
 
+
+const GITHUB_ISSUES_API =
+  'https://api.github.com/repos/kovalitskia72-art/porzahali/issues?state=open&creator=kovalitskia72-art&per_page=100';
+
+type EditorialIssue = {
+  number: number;
+  title: string;
+  body: string | null;
+  created_at: string;
+  user?: { login?: string };
+  pull_request?: unknown;
+};
+
+// The site is static: only issues created by the repository owner and
+// explicitly prefixed with [ВИДЕО] are visible to all visitors.
+// Suggestions created by anyone else stay in GitHub for moderation.
+function getYouTubeId(link: string): string | null {
+  try {
+    const url = new URL(link);
+    if (url.protocol !== 'https:') return null;
+    const host = url.hostname.toLowerCase();
+    let id: string | null = null;
+    if (host === 'youtu.be') {
+      id = url.pathname.split('/')[1] ?? null;
+    } else if (['www.youtube.com', 'youtube.com', 'm.youtube.com'].includes(host)) {
+      id = url.pathname === '/watch'
+        ? url.searchParams.get('v')
+        : /^\/(shorts|live|embed)\//.test(url.pathname)
+          ? url.pathname.split('/')[2] ?? null
+          : null;
+    }
+    return id && /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : null;
+  } catch {
+    return null;
+  }
+}
+
+async function loadPublishedGithubVideos(): Promise<HumorVideo[]> {
+  const response = await fetch(GITHUB_ISSUES_API, {
+    headers: { Accept: 'application/vnd.github+json' },
+  });
+  if (!response.ok) throw new Error('GitHub issue feed error: ' + response.status);
+
+  const issues = (await response.json()) as EditorialIssue[];
+  if (!Array.isArray(issues)) return [];
+
+  return issues.flatMap((issue): HumorVideo[] => {
+    if (
+      issue.pull_request ||
+      issue.user?.login?.toLowerCase() !== 'kovalitskia72-art' ||
+      !issue.title.startsWith('[ВИДЕО] ')
+    ) return [];
+
+    const title = issue.title.slice('[ВИДЕО] '.length).trim().slice(0, 120);
+    const urlMatch = issue.body?.match(/^Ссылка:\s*(https:\/\/\S+)/m);
+    const id = urlMatch ? getYouTubeId(urlMatch[1]) : null;
+    if (!title || !id) return [];
+
+    return [{
+      id: 'github-video-' + issue.number,
+      title,
+      description: 'Видео из подборки редакции «ПОРЖАЛИ».',
+      url: 'https://www.youtube.com/watch?v=' + id,
+      source: 'youtube',
+      date: issue.created_at,
+      emoji: '🔥',
+      featured: true,
+    }];
+  });
+}
+
+function deduplicateVideos(videos: HumorVideo[]): HumorVideo[] {
+  const seen = new Set<string>();
+  return videos.filter((video) => {
+    const videoId = getYouTubeId(video.url);
+    const key = videoId ? 'yt:' + videoId : 'id:' + video.id;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 export function useVideos() {
   const [userVideos, setUserVideos] = useState<HumorVideo[]>([]);
   const [remoteVideos, setRemoteVideos] =
     useState<HumorVideo[]>(builtInVideos);
+  const [publishedVideos, setPublishedVideos] = useState<HumorVideo[]>([]);
 
   useEffect(() => {
     setUserVideos(readSavedVideos());
@@ -83,6 +166,11 @@ export function useVideos() {
       .catch((error) => {
         console.error('Не удалось загрузить видео из Supabase:', error);
         setRemoteVideos(builtInVideos);
+      });
+    loadPublishedGithubVideos()
+      .then(setPublishedVideos)
+      .catch((error) => {
+        console.error('Не удалось загрузить общую видеоленту GitHub:', error);
       });
   }, []);
 
@@ -103,7 +191,7 @@ export function useVideos() {
   }, []);
 
   return {
-    videos: [...userVideos, ...remoteVideos],
+    videos: deduplicateVideos([...userVideos, ...publishedVideos, ...remoteVideos]),
     userVideos,
     addVideo,
     removeVideo,
