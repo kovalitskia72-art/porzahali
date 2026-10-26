@@ -18,7 +18,8 @@ interface Props {
 
 export function CategoryPage({ hasReacted, onReact, onNavigate, categoryId, showAll }: Props) {
   const [sort, setSort] = useState<SortMode>('new');
-  const [selectedCat, setSelectedCat] = useState<string | null>(categoryId ?? null);
+  // The URL is the source of truth: switching categories must immediately update the feed.
+  const selectedCat = showAll ? null : (categoryId ?? null);
 
   const filtered = useMemo(() => {
     let result = allPosts;
@@ -59,7 +60,7 @@ export function CategoryPage({ hasReacted, onReact, onNavigate, categoryId, show
         <div className="mt-6 -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto sm:overflow-visible no-scrollbar">
           <div className="flex gap-2 sm:flex-wrap min-w-max sm:min-w-0">
             <button
-              onClick={() => setSelectedCat(null)}
+              onClick={() => onNavigate({ name: 'all' })}
               className={`px-4 py-2 text-sm font-medium rounded-full transition-all whitespace-nowrap ${
                 !selectedCat
                   ? 'bg-orange-500 text-white'
@@ -71,7 +72,7 @@ export function CategoryPage({ hasReacted, onReact, onNavigate, categoryId, show
             {categories.map((c) => (
               <button
                 key={c.id}
-                onClick={() => setSelectedCat(c.id)}
+                onClick={() => onNavigate({ name: 'category', id: c.id })}
                 className={`px-4 py-2 text-sm font-medium rounded-full transition-all whitespace-nowrap ${
                   selectedCat === c.id
                     ? 'bg-orange-500 text-white'
