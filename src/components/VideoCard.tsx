@@ -51,6 +51,8 @@ style={{
       ? "linear-gradient(#0005, #0008), url('/porzahali/images/Волк и Заяц_ Выборы в городе.png')"
       : video.id === 'volk-zayac-02'
       ? "linear-gradient(#0005, #0008), url('/porzahali/images/Волк и Заяц_ победа после выборов (1).png')"
+      : video.id === 'volk-zayac-03'
+      ? "linear-gradient(#0005, #0008), url('https://i.ytimg.com/vi/ULHh33wwkpY/hqdefault.jpg')"
       : undefined
 }}
 

@@ -163,23 +163,35 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
             </div>
           </div>
 
-          {/* Mobile visual cards — below buttons */}
-          <div className="mt-8 grid grid-cols-3 gap-3 lg:hidden">
-            {featured.map((post) => (
-              <a
-                key={post.id}
-                href={buildHash({ name: 'post', id: post.id })}
-                className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all"
-              >
-                <PostVisual post={post} className="aspect-square w-full" />
-                <div className="p-2">
-                  <h3 className="font-bold text-xs text-gray-900 line-clamp-2 group-hover:text-orange-600 transition-colors">
-                    {post.title}
-                  </h3>
-                </div>
-              </a>
-            ))}
-          </div>
+          {/* Mobile: lead with our original cartoon series, not three tiny post cards. */}
+          <a
+            href={buildHash({ name: 'videos' })}
+            className="group mt-8 block overflow-hidden rounded-2xl border border-orange-100 bg-white shadow-lg transition-shadow hover:shadow-xl lg:hidden"
+            aria-label="Смотреть мультсериал Волк и Заяц"
+          >
+            <div className="relative overflow-hidden">
+              <img
+                src="/porzahali/images/Волк и Заяц_ Выборы в городе.png"
+                alt="Волк и Заяц — герои нашего мультсериала"
+                className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                loading="eager"
+              />
+              <span className="absolute left-3 top-3 rounded-full bg-gray-950/85 px-3 py-1.5 text-xs font-bold text-white">
+                🐺🐰 Наш мультсериал
+              </span>
+            </div>
+            <div className="p-4 sm:p-5">
+              <h2 className="text-xl font-black text-gray-900">Волк и Заяц</h2>
+              <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                Три серии: от выборов до первого указа мэра.
+              </p>
+              <span className="mt-4 flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-orange-500 px-4 py-3 text-sm font-bold text-white transition-colors group-hover:bg-orange-600">
+                <Film size={18} aria-hidden="true" />
+                Смотреть мультсериал
+                <ArrowRight size={18} aria-hidden="true" />
+              </span>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -439,7 +451,7 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
     Два героя, большие амбиции и смешные приключения!
   </p>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {[
       {
         title: 'Серия 1. Выборы',
@@ -450,6 +462,11 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
         title: 'Серия 2. После выборов',
         image: '/porzahali/images/Волк и Заяц_ победа после выборов (1).png',
         url: 'https://youtu.be/tknTiVpWVUs'
+      },
+      {
+        title: 'Серия 3. Первый указ мэра',
+        image: 'https://i.ytimg.com/vi/ULHh33wwkpY/hqdefault.jpg',
+        url: 'https://youtu.be/ULHh33wwkpY'
       }
     ].map((episode) => (
       <a
