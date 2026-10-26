@@ -64,4 +64,14 @@ export const videos: HumorVideo[] = [
     emoji: '🐺',
     featured: true,
   },
+  {
+    id: 'volk-zayac-03',
+    title: 'Волк и Заяц — Серия 3. Первый указ мэра',
+    description: 'Волк стал мэром и объявляет первый указ. Но кому повысят зарплаты?',
+    url: 'https://youtu.be/ULHh33wwkpY',
+    source: 'youtube',
+    date: '2026-10-22',
+    emoji: '🐺',
+    featured: true,
+  },
 ];
