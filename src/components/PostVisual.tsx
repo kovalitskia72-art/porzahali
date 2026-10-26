@@ -41,7 +41,7 @@ export function PostVisual({
     );
   }
 
-  if (post.visual.type === 'image' && post.visual.imageUrl) {
+  if (post.visual.type === 'image' && post.visual.imageUrl && !(useFallback && !post.visual.imageFallbackUrl)) {
     const imageUrl = useFallback && post.visual.imageFallbackUrl
       ? post.visual.imageFallbackUrl
       : post.visual.imageUrl;
@@ -54,15 +54,15 @@ export function PostVisual({
           alt={altText}
           loading="lazy"
           onError={() => {
-            if (!useFallback && post.visual.imageFallbackUrl) setUseFallback(true);
+            if (!useFallback) setUseFallback(true);
           }}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
         />
         {editorialCover ? (
           <>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-950/85 via-gray-950/10 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/15 to-gray-950/20" />
             <div className="pointer-events-none absolute bottom-3 left-3 right-3 z-10 flex flex-col items-start gap-1 sm:bottom-4 sm:left-4">
-              <span className="inline-block max-w-full rounded-md bg-gray-950/90 px-2.5 py-1.5 text-[18px] font-black uppercase leading-tight tracking-tight text-white shadow-lg sm:text-[21px]"
+              <span className="inline-block max-w-full rounded-md bg-gray-950/90 px-2.5 py-1.5 text-[20px] font-black uppercase leading-tight tracking-tight text-white shadow-lg sm:text-[23px]"
                 style={{ textShadow: '1px 2px 0 rgba(0,0,0,.35)' }}>
                 {post.visual.overlayTitle}
               </span>
