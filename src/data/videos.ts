@@ -13,6 +13,16 @@ export interface HumorVideo {
 
 export const videos: HumorVideo[] = [
   {
+    id: 'humor-shorts-ut8foumls9y',
+    title: 'Новый Shorts — находка дня',
+    description: 'Короткий ролик, присланный для подборки «ПОРЖАЛИ». Смотреть на YouTube.',
+    url: 'https://www.youtube.com/shorts/ut8FoUmlS9Y',
+    source: 'youtube',
+    date: '2026-10-26',
+    emoji: '🔥',
+    featured: true,
+  },
+  {
     id: 'humor-simons-cat',
     title: 'Кот Саймона — как разбудить хозяина',
     description: 'Голодный кот изобретает всё новые способы разбудить хозяина. Автор: Simon’s Cat.',
