@@ -4,7 +4,7 @@ import { getCategory } from '@/config/site';
 import { PostVisual } from './PostVisual';
 import { ReactionBar } from './ReactionBar';
 import { buildHash } from '@/hooks/useRouter';
-import { Eye, ArrowRight } from 'lucide-react';
+import { CalendarDays, Eye, ArrowRight } from 'lucide-react';
 
 interface Props {
   post: Post;
@@ -26,52 +26,62 @@ function formatViews(views: number): string {
   return String(views);
 }
 
+/**
+ * The shared editorial card for all eight content categories.
+ * Art/photography is data-driven through PostVisual; the layout stays consistent.
+ */
 function PostCardBase({ post, hasReacted, onReact }: Props) {
-  const cat = getCategory(post.category);
+  const category = getCategory(post.category);
+  const href = buildHash({ name: 'post', id: post.id });
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-3xl border border-orange-100/80 bg-white shadow-md shadow-gray-200/60 transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-100/80">
-      <a
-        href={buildHash({ name: 'post', id: post.id })}
-        className="relative block overflow-hidden"
-      >
-        <PostVisual post={post} className="aspect-[16/10] w-full" />
-        <div className="absolute left-3 top-3">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/95 px-3 py-1.5 text-xs font-extrabold text-gray-800 shadow-md backdrop-blur-sm">
-            {cat?.emoji} {cat?.label}
-          </span>
-        </div>
+    <article className="group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-sm shadow-gray-300/50 transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-100/70">
+      <a href={href} className="relative block overflow-hidden" aria-label={`Открыть: ${post.title}`}>
+        <PostVisual post={post} className="aspect-[16/9] w-full" />
+        <span className="absolute left-3 top-3 inline-flex max-w-[80%] items-center gap-1.5 rounded-full border border-white/70 bg-white/95 px-3 py-1.5 text-xs font-bold text-gray-900 shadow-md backdrop-blur-sm">
+          <span aria-hidden="true">{category?.emoji}</span>
+          <span className="truncate">{category?.label}</span>
+        </span>
       </a>
-      <div className="flex flex-1 flex-col p-4 sm:p-5">
-        <a href={buildHash({ name: 'post', id: post.id })}>
-          <h3 className="line-clamp-2 text-lg font-extrabold leading-snug tracking-tight text-gray-900 transition-colors group-hover:text-orange-600">
+
+      <div className="flex flex-1 flex-col px-4 pb-3 pt-3.5 sm:px-4">
+        <a href={href} className="block">
+          <h3 className="line-clamp-2 min-h-[2.7rem] text-base font-extrabold leading-snug tracking-tight text-gray-950 transition-colors group-hover:text-orange-600 sm:text-[17px]">
             {post.title}
           </h3>
         </a>
-        <p className="mt-2 line-clamp-2 flex-1 text-sm leading-relaxed text-gray-500">
+
+        <p className="mt-1.5 line-clamp-2 min-h-10 text-[13px] leading-5 text-gray-500">
           {post.description}
         </p>
-        <div className="mt-4 flex items-center justify-between text-xs font-medium text-gray-400">
-          <span>{formatDate(post.date)}</span>
-          <span className="inline-flex items-center gap-1">
-            <Eye size={14} />
+
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 text-[11px] font-medium text-gray-400">
+          <span className="inline-flex items-center gap-1.5">
+            <CalendarDays size={13} aria-hidden="true" />
+            {formatDate(post.date)}
+          </span>
+          <span className="inline-flex items-center gap-1.5" title="Просмотры">
+            <Eye size={14} aria-hidden="true" />
             {formatViews(post.views)}
           </span>
         </div>
-        <ReactionBar
-          post={post}
-          hasReacted={hasReacted}
-          onReact={onReact}
-          compact
-        />
-        <a
-          href={buildHash({ name: 'post', id: post.id })}
-          className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-orange-100 bg-orange-50 px-4 py-3 text-sm font-extrabold text-orange-700 transition-all group-hover:border-orange-500 group-hover:bg-orange-500 group-hover:text-white"
-          aria-label={`Читать: ${post.title}`}
-        >
-          Читать полностью
-          <ArrowRight size={17} />
-        </a>
+
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-x-2 gap-y-1.5 border-t border-gray-100 pt-2.5">
+          <ReactionBar
+            post={post}
+            hasReacted={hasReacted}
+            onReact={onReact}
+            compact
+          />
+          <a
+            href={href}
+            className="inline-flex min-h-10 shrink-0 items-center justify-center gap-1 rounded-xl bg-orange-50 px-3.5 py-2 text-sm font-bold text-orange-700 transition-colors hover:bg-orange-500 hover:text-white focus-visible:bg-orange-500 focus-visible:text-white"
+            aria-label={`Читать: ${post.title}`}
+          >
+            Читать
+            <ArrowRight size={16} aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </article>
   );
