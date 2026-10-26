@@ -23,7 +23,10 @@ export interface Post {
   type: 'gradient' | 'meme' | 'chat' | 'image';
     text: string;
   gradient: string;
-  imageUrl?: string; 
+  imageUrl?: string;
+  imageFallbackUrl?: string;
+  overlayTitle?: string;
+  overlayAccent?: string;
   };
   featured?: boolean;
 }

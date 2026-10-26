@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Post } from '@/types';
 import { getCategory } from '@/config/site';
 
@@ -10,20 +11,46 @@ export function PostVisual({
 }) {
   const category = getCategory(post.category);
   const altText = `Иллюстрация: ${post.title}`;
+  const [useFallback, setUseFallback] = useState(false);
 
   if (post.visual.type === 'image' && post.visual.imageUrl) {
+    const imageUrl = useFallback && post.visual.imageFallbackUrl
+      ? post.visual.imageFallbackUrl
+      : post.visual.imageUrl;
+    const editorialCover = Boolean(post.visual.overlayTitle) && !useFallback;
+
     return (
-      <div className={`relative overflow-hidden bg-stone-100 ${className}`}>
+      <div className={`relative isolate overflow-hidden bg-stone-100 ${className}`}>
         <img
-          src={post.visual.imageUrl}
+          src={imageUrl}
           alt={altText}
           loading="lazy"
+          onError={() => {
+            if (!useFallback && post.visual.imageFallbackUrl) setUseFallback(true);
+          }}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-gray-950/50 to-transparent" />
-        <span className="absolute bottom-3 right-3 rounded-full border border-white/30 bg-gray-950/50 px-2.5 py-1 text-[10px] font-black tracking-wide text-white backdrop-blur-sm">
-          {post.visual.imageUrl.endsWith('.svg') ? 'ПОРЖАЛИ · АРТ' : 'ПОРЖАЛИ · ФОТО'}
-        </span>
+        {editorialCover ? (
+          <>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-950/85 via-gray-950/10 to-transparent" />
+            <div className="pointer-events-none absolute bottom-3 left-3 right-3 z-10 flex flex-col items-start gap-1 sm:bottom-4 sm:left-4">
+              <span className="inline-block max-w-full rounded-md bg-gray-950/90 px-2.5 py-1.5 text-[18px] font-black uppercase leading-tight tracking-tight text-white shadow-lg sm:text-[21px]"
+                style={{ textShadow: '1px 2px 0 rgba(0,0,0,.35)' }}>
+                {post.visual.overlayTitle}
+              </span>
+              <span className="inline-block max-w-full -rotate-1 rounded-md bg-yellow-300 px-2.5 py-1.5 text-[17px] font-black uppercase leading-tight tracking-tight text-gray-950 shadow-lg sm:text-[21px]">
+                {post.visual.overlayAccent}
+              </span>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-gray-950/50 to-transparent" />
+            <span className="absolute bottom-3 right-3 rounded-full border border-white/30 bg-gray-950/50 px-2.5 py-1 text-[10px] font-black tracking-wide text-white backdrop-blur-sm">
+              {imageUrl.endsWith('.svg') ? 'ПОРЖАЛИ · АРТ' : 'ПОРЖАЛИ · ФОТО'}
+            </span>
+          </>
+        )}
       </div>
     );
   }
