@@ -75,7 +75,7 @@ function PostCardBase({ post, hasReacted, onReact }: Props) {
           />
           <a
             href={href}
-            className="inline-flex min-h-10 shrink-0 items-center justify-center gap-1 rounded-xl bg-orange-50 px-3.5 py-2 text-sm font-bold text-orange-700 transition-colors hover:bg-orange-500 hover:text-white focus-visible:bg-orange-500 focus-visible:text-white"
+            className="ml-auto inline-flex min-h-10 shrink-0 items-center justify-center gap-1 rounded-xl bg-orange-50 px-3.5 py-2 text-sm font-bold text-orange-700 transition-colors hover:bg-orange-500 hover:text-white focus-visible:bg-orange-500 focus-visible:text-white"
             aria-label={`Читать: ${post.title}`}
           >
             Читать
