@@ -85,6 +85,7 @@ export function PostVisual({
           backgroundSize: '22px 22px',
         }}
       />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-950/40 via-gray-950/10 to-transparent" />
       <div className="pointer-events-none absolute -left-10 -top-16 h-44 w-44 rounded-full bg-white/20 blur-2xl" />
       <div className="pointer-events-none absolute -bottom-16 -right-12 h-52 w-52 rounded-full bg-gray-950/15 blur-2xl" />
       <div className="pointer-events-none absolute right-4 top-9 -rotate-12 select-none text-7xl opacity-45 drop-shadow-md sm:text-8xl" aria-hidden="true">
