@@ -31,6 +31,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Cache editorial meme cover photos
+        run: node scripts/download-editorial-images.mjs
+
       - name: Build project
         run: npm run build
 
