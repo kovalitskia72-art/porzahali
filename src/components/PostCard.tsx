@@ -38,10 +38,12 @@ function PostCardBase({ post, hasReacted, onReact }: Props) {
     <article className="group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-gray-200/80 bg-white shadow-sm shadow-gray-300/50 transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-100/70">
       <a href={href} className="relative block overflow-hidden" aria-label={`Открыть: ${post.title}`}>
         <PostVisual post={post} className="aspect-[16/9] w-full" />
-        <span className="absolute left-3 top-3 inline-flex max-w-[80%] items-center gap-1.5 rounded-full border border-white/70 bg-white/95 px-3 py-1.5 text-xs font-bold text-gray-900 shadow-md backdrop-blur-sm">
-          <span aria-hidden="true">{category?.emoji}</span>
-          <span className="truncate">{category?.label}</span>
-        </span>
+        {typeof post.visual.atlasIndex !== 'number' && (
+          <span className="absolute left-3 top-3 inline-flex max-w-[80%] items-center gap-1.5 rounded-full border border-white/70 bg-white/95 px-3 py-1.5 text-xs font-bold text-gray-900 shadow-md backdrop-blur-sm">
+            <span aria-hidden="true">{category?.emoji}</span>
+            <span className="truncate">{category?.label}</span>
+          </span>
+        )}
       </a>
 
       <div className="flex flex-1 flex-col px-4 pb-3 pt-3.5 sm:px-4">

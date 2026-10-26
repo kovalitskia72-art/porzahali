@@ -13,6 +13,34 @@ export function PostVisual({
   const altText = `Иллюстрация: ${post.title}`;
   const [useFallback, setUseFallback] = useState(false);
 
+  // The four approved meme artworks are cropped from one lightweight local image.
+  // Using an actual <img> preserves onError fallback if AVIF is unsupported.
+  if (
+    post.visual.type === 'image' &&
+    post.visual.imageUrl &&
+    typeof post.visual.atlasIndex === 'number' &&
+    !useFallback
+  ) {
+    const column = post.visual.atlasIndex % 2;
+    const row = Math.floor(post.visual.atlasIndex / 2);
+    return (
+      <div className={`relative isolate overflow-hidden bg-gray-100 ${className}`}>
+        <img
+          src={post.visual.imageUrl}
+          alt={altText}
+          loading="lazy"
+          decoding="async"
+          onError={() => setUseFallback(true)}
+          className="absolute h-[200%] w-[200%] max-w-none object-fill"
+          style={{
+            left: column === 0 ? '0%' : '-100%',
+            top: row === 0 ? '0%' : '-100%',
+          }}
+        />
+      </div>
+    );
+  }
+
   if (post.visual.type === 'image' && post.visual.imageUrl) {
     const imageUrl = useFallback && post.visual.imageFallbackUrl
       ? post.visual.imageFallbackUrl
