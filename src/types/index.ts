@@ -25,6 +25,7 @@ export interface Post {
   gradient: string;
   imageUrl?: string;
   imageFallbackUrl?: string;
+  atlasIndex?: 0 | 1 | 2 | 3;
   overlayTitle?: string;
   overlayAccent?: string;
   };
