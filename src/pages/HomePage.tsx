@@ -439,7 +439,7 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
     Два героя, большие амбиции и смешные приключения!
   </p>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {[
       {
         title: 'Серия 1. Выборы',
@@ -450,6 +450,11 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
         title: 'Серия 2. После выборов',
         image: '/porzahali/images/Волк и Заяц_ победа после выборов (1).png',
         url: 'https://youtu.be/tknTiVpWVUs'
+      },
+      {
+        title: 'Серия 3. Первый указ мэра',
+        image: 'https://i.ytimg.com/vi/ULHh33wwkpY/hqdefault.jpg',
+        url: 'https://youtu.be/ULHh33wwkpY'
       }
     ].map((episode) => (
       <a
