@@ -24,6 +24,8 @@ export function normalizeVideoUrl(url: string): { source: HumorVideo['source']; 
 }
 
 export function VideoCard({ video, removable, onRemove }: { video: HumorVideo; removable?: boolean; onRemove?: () => void }) {
+  const youtubeId = video.source === 'youtube' ? getYouTubeId(video.url) : null;
+
   return (
     <article className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
       <div className="relative aspect-video bg-gray-900 overflow-hidden">
@@ -51,8 +53,8 @@ style={{
       ? "linear-gradient(#0005, #0008), url('/porzahali/images/Волк и Заяц_ Выборы в городе.png')"
       : video.id === 'volk-zayac-02'
       ? "linear-gradient(#0005, #0008), url('/porzahali/images/Волк и Заяц_ победа после выборов (1).png')"
-      : video.id === 'volk-zayac-03'
-      ? "linear-gradient(#0005, #0008), url('https://i.ytimg.com/vi/ULHh33wwkpY/hqdefault.jpg')"
+      : youtubeId
+      ? `linear-gradient(#0005, #0008), url('https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg')`
       : undefined
 }}
 
