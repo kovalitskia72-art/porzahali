@@ -195,7 +195,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 4432,
     reactions: { like: 345, funny: 567, fire: 234, wow: 678 },
-    visual: { type: 'gradient', text: '🧠', gradient: 'from-indigo-400 to-blue-600' },
+    visual: { type: 'image', text: '🧠', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-philosophical-queue.svg' },
   },
   {
     id: '9',
@@ -382,7 +382,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 1169,
     reactions: { like: 456, funny: 1234, fire: 345, wow: 567 },
-    visual: { type: 'gradient', text: '🛒', gradient: 'from-indigo-400 to-blue-600' },
+    visual: { type: 'image', text: '🛒', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-supermarket-queue.svg' },
   },
   {
     id: '16',
@@ -593,7 +593,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 4487,
     reactions: { like: 1234, funny: 890, fire: 567, wow: 234 },
-    visual: { type: 'gradient', text: '🏃', gradient: 'from-indigo-400 to-blue-600' },
+    visual: { type: 'image', text: '🏃', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-gym-after-35.svg' },
   },
   {
     id: '24',
@@ -785,7 +785,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 2798,
     reactions: { like: 2345, funny: 1567, fire: 456, wow: 123 },
-    visual: { type: 'gradient', text: '⏰', gradient: 'from-indigo-400 to-blue-600' },
+    visual: { type: 'image', text: '⏰', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-mom-calls-eight.svg' },
   },
 
   {
