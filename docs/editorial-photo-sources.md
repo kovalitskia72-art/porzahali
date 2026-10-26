@@ -18,7 +18,7 @@
 | 14 | https://www.pexels.com/photo/19773939/ |
 | 16 | https://www.pexels.com/photo/9301305/ |
 | 17 | https://www.pexels.com/photo/8374286/ |
-| 18 | https://www.pexels.com/photo/3512505/ |
+| 18 | https://www.pexels.com/photo/1440387/ |
 | 19 | https://www.pexels.com/photo/8486922/ |
 | 20 | https://www.pexels.com/photo/9461645/ |
 | 21 | https://www.pexels.com/photo/6075559/ |
