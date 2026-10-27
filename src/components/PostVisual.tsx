@@ -73,10 +73,11 @@ export function PostVisual({
           </>
         ) : (
           <>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-gray-950/50 to-transparent" />
-            <span className="absolute bottom-3 right-3 rounded-full border border-white/30 bg-gray-950/50 px-2.5 py-1 text-[10px] font-black tracking-wide text-white backdrop-blur-sm">
-              {imageUrl.endsWith('.svg') ? 'ПОРЖАЛИ · АРТ' : 'ПОРЖАЛИ · ФОТО'}
-            </span>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-950/85 via-gray-950/5 to-transparent" />
+            <div className="pointer-events-none absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2">
+              <span className="max-w-[78%] rounded-lg bg-yellow-300 px-2.5 py-1.5 text-sm font-black leading-tight text-gray-950 shadow-lg sm:text-lg">{post.title}</span>
+              <span className="shrink-0 rounded-md bg-gray-950/90 px-2 py-1 text-[10px] font-black text-white">ПОРЖАЛИ</span>
+            </div>
           </>
         )}
       </div>
@@ -143,7 +144,7 @@ export function PostVisual({
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-950/40 via-gray-950/10 to-transparent" />
       <div className="pointer-events-none absolute -left-10 -top-16 h-44 w-44 rounded-full bg-white/20 blur-2xl" />
       <div className="pointer-events-none absolute -bottom-16 -right-12 h-52 w-52 rounded-full bg-gray-950/15 blur-2xl" />
-      <div className="pointer-events-none absolute right-4 top-9 -rotate-12 select-none text-7xl opacity-45 drop-shadow-md sm:text-8xl" aria-hidden="true">
+      <div className="pointer-events-none absolute right-4 top-9 -rotate-12 select-none text-7xl opacity-60 drop-shadow-md sm:text-8xl" aria-hidden="true">
         {post.visual.text}
       </div>
       <div className="relative flex h-full flex-col justify-between gap-3 p-4 sm:p-5">
@@ -156,7 +157,7 @@ export function PostVisual({
           <span className="mb-1.5 inline-block rounded bg-gray-950/20 px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider text-white/95">
             {eyebrow}
           </span>
-          <p className={`line-clamp-3 font-black leading-tight tracking-tight text-white drop-shadow-md ${titleSize}`}>
+          <p className={`line-clamp-3 w-fit max-w-full rounded-lg bg-yellow-300 px-3 py-2 font-black leading-tight tracking-tight text-gray-950 shadow-xl ${titleSize}`}>
             {post.title}
           </p>
         </div>
