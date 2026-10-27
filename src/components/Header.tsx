@@ -54,7 +54,7 @@ export function Header({ currentRoute, onNavigate }: Props) {
             : 'bg-white'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-[1680px] mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             <a
               href={buildHash({ name: 'home' })}
