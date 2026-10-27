@@ -45,23 +45,22 @@ export function VideoCard({ video, removable, onRemove }: { video: HumorVideo; r
   target="_blank"
   rel="noopener noreferrer"
 
-className="relative flex h-full w-full flex-col items-center justify-center gap-3 bg-gray-950 bg-cover bg-center text-white transition-transform duration-300 group-hover:scale-[1.02]"
+className="relative flex h-full w-full items-center justify-center bg-gray-950 bg-cover bg-center text-white transition-transform duration-300 group-hover:scale-[1.02]"
 
 style={{
   backgroundImage:
     video.id === 'volk-zayac-01'
-      ? "linear-gradient(#0005, #0008), url('/porzahali/images/Волк и Заяц_ Выборы в городе.png')"
+      ? "linear-gradient(#0001, #0005), url('/porzahali/images/Волк и Заяц_ Выборы в городе.png')"
       : video.id === 'volk-zayac-02'
-      ? "linear-gradient(#0005, #0008), url('/porzahali/images/Волк и Заяц_ победа после выборов (1).png')"
+      ? "linear-gradient(#0001, #0005), url('/porzahali/images/Волк и Заяц_ победа после выборов (1).png')"
       : youtubeId
-      ? `linear-gradient(#0005, #0008), url('https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg')`
+      ? `linear-gradient(#0001, #0005), url('https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg')`
       : undefined
 }}
 
 
 >
   <span className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/80 bg-orange-500/95 shadow-2xl transition-transform group-hover:scale-110"><Play size={30} fill="currentColor" /></span>
-  <span className="max-w-[90%] rounded-lg bg-yellow-300 px-3 py-2 text-center text-base font-black leading-tight text-gray-950 shadow-xl sm:text-lg">{video.title}</span>
 </a>
 
         ) : (
@@ -71,13 +70,6 @@ style={{
             </span>
             <span className="font-bold">Открыть видео</span>
           </a>
-        )}
-        {video.source !== 'external' && (
-          <div className="absolute left-3 top-3 pointer-events-none">
-            <span className="inline-flex items-center gap-1.5 bg-black/60 text-white text-xs font-semibold px-2.5 py-1.5 rounded-full backdrop-blur-sm">
-              <Play size={12} fill="currentColor" /> ВИДЕО
-            </span>
-          </div>
         )}
       </div>
       <div className="p-4 sm:p-5">
