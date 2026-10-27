@@ -19,15 +19,6 @@ interface Props {
   onNavigate: (r: Route) => void;
 }
 
-function formatDate(dateStr: string): string {
-  const months = [
-    'янв', 'фев', 'мар', 'апр', 'мая', 'июн',
-    'июл', 'авг', 'сен', 'окт', 'ноя', 'дек',
-  ];
-  const d = new Date(dateStr);
-  return `${d.getDate()} ${months[d.getMonth()]}`;
-}
-
 export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
   const [feedOpen, setFeedOpen] = useState(false);
   const [feedFilter, setFeedFilter] = useState<CategoryId | null>(null);
@@ -35,17 +26,7 @@ export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
   const { videos } = useVideos();
   const feedRef = useRef<HTMLDivElement>(null);
 
-  const featured = useMemo(() => allPosts.filter((p) => p.featured).slice(0, 3), []);
-  const trending = useMemo(
-    () =>
-      [...allPosts]
-        .sort(
-          (a, b) =>
-            b.reactions.funny + b.reactions.like - a.reactions.funny - a.reactions.like
-        )
-        .slice(0, 6),
-    []
-  );
+  const featured = useMemo(() => allPosts.filter((p) => p.featured).slice(0, 2), []);
   const lifeStories = useMemo(
     () => allPosts.filter((p) => p.category === 'istorii').slice(0, 3),
     []
@@ -91,7 +72,7 @@ export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
               'radial-gradient(circle at 20% 50%, rgba(251,146,60,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(251,191,36,0.15) 0%, transparent 50%)',
           }}
         />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 lg:py-20">
+        <div className="relative max-w-[1680px] mx-auto px-4 sm:px-6 py-10 sm:py-16 lg:py-20">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-full mb-5 sm:mb-6">
@@ -124,39 +105,48 @@ export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
               </div>
             </div>
 
-            {/* Hero visual cards — desktop */}
+            {/* Hero: showcase our own cartoon, followed by two real featured articles. */}
             <div className="hidden lg:grid grid-cols-2 gap-4">
-              {featured.map((post, i) => (
+              <a
+                href="https://youtu.be/ZakbKsQnD3g"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group col-span-2 overflow-hidden rounded-2xl border border-orange-100 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                aria-label="Смотреть первый эпизод мультсериала Волк и Заяц"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src="/porzahali/images/Волк и Заяц_ Выборы в городе.png"
+                    alt="Волк и Заяц — Выборы в городе"
+                    className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    decoding="async"
+                  />
+                  <span className="absolute left-3 top-3 rounded-full bg-gray-950/85 px-3 py-1.5 text-xs font-extrabold text-white shadow-md">
+                    🐺🐰 Наш мультсериал
+                  </span>
+                  <span className="absolute bottom-3 right-3 rounded-lg bg-orange-500 px-3 py-2 text-sm font-bold text-white shadow-md">
+                    ▶ Смотреть серию 1
+                  </span>
+                </div>
+                <div className="flex items-center justify-between gap-3 p-3.5">
+                  <h3 className="font-black text-gray-950 transition-colors group-hover:text-orange-600">
+                    Волк и Заяц — Выборы
+                  </h3>
+                  <span className="shrink-0 text-xs font-bold text-orange-600">На YouTube ↗</span>
+                </div>
+              </a>
+              {featured.map((post) => (
                 <a
                   key={post.id}
-                
-href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: post.id })}
-
-                  className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 ${
-                    i === 0 ? 'col-span-2' : ''
-                  }`}
-                  style={{ animation: `fadeInUp 0.6s ease-out ${i * 0.15}s both` }}
+                  href={buildHash({ name: 'post', id: post.id })}
+                  className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                 >
-                 
-{i === 0 ? (
-  <img
-    src="/porzahali/images/Волк и Заяц_ Выборы в городе.png"
-    alt="Волк и Заяц — Выборы"
-    className="aspect-[16/9] w-full object-cover"
-  />
-) : (
-  <PostVisual post={post} className="aspect-[16/9] w-full" />
-)}
-
-                  <div className="p-3">
-                    <h3 className="font-bold text-sm text-gray-900 line-clamp-1 group-hover:text-orange-600 transition-colors">
-                    
-{i === 0 ? 'Волк и Заяц — Серия 1. Выборы' : post.title}
-
+                  <PostVisual post={post} className="aspect-[16/9] w-full" />
+                  <div className="p-3.5">
+                    <h3 className="line-clamp-2 text-sm font-extrabold text-gray-950 transition-colors group-hover:text-orange-600">
+                      {post.title}
                     </h3>
-                    <p className="text-xs text-gray-400 mt-1">
-                      😂 {post.reactions.funny} · ❤️ {post.reactions.like}
-                    </p>
+                    <p className="mt-1 line-clamp-2 text-xs text-gray-500">{post.description}</p>
                   </div>
                 </a>
               ))}
@@ -196,7 +186,7 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
       </section>
 
       {/* Full feed — "Сейчас смешно" */}
-      <section ref={feedRef} className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12 scroll-mt-20">
+      <section ref={feedRef} className="max-w-[1680px] mx-auto px-4 sm:px-6 py-10 sm:py-12 scroll-mt-20">
         <div className="flex items-center gap-2 mb-6">
           <TrendingUp className="text-orange-500 shrink-0" size={28} />
           <h2 className="text-section-title font-black text-gray-900">
@@ -305,7 +295,7 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
 
       {/* Categories */}
       <section className="bg-gray-50 py-10 sm:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-[1680px] mx-auto px-4 sm:px-6">
           <h2 className="text-section-title font-black text-gray-900 mb-6">
             Выбери свой юмор
           </h2>
@@ -337,7 +327,7 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
 
       {/* Funny video */}
       <section className="bg-gray-50 py-10 sm:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-[1680px] mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between mb-6 gap-4">
             <div>
               <div className="flex items-center gap-2">
@@ -370,7 +360,7 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
       </section>
 
       {/* Life stories */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+      <section className="max-w-[1680px] mx-auto px-4 sm:px-6 py-10 sm:py-12">
         <div className="flex items-center justify-between mb-6 gap-4">
           <h2 className="text-section-title font-black text-gray-900">
             Истории из жизни
@@ -382,33 +372,16 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
             Все истории <ArrowRight size={16} />
           </button>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {lifeStories.map((post) => (
-            <a
-              key={post.id}
-              href={buildHash({ name: 'post', id: post.id })}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
-            >
-              <PostVisual post={post} className="aspect-[16/9] w-full" />
-              <div className="p-4 sm:p-5">
-                <h3 className="font-bold text-base sm:text-lg text-gray-900 group-hover:text-orange-600 transition-colors line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="mt-2 text-sm text-gray-500 line-clamp-2">
-                  {post.description}
-                </p>
-                <div className="mt-3 text-xs text-gray-400">
-                  {formatDate(post.date)} · {post.readTime} мин
-                </div>
-              </div>
-            </a>
+            <PostCard key={post.id} post={post} hasReacted={hasReacted} onReact={onReact} />
           ))}
         </div>
       </section>
 
-      {/* Best of week */}
+            {/* Best of week */}
       <section className="bg-gray-900 py-10 sm:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-[1680px] mx-auto px-4 sm:px-6">
           <h2 className="text-section-title font-black text-white mb-6">
             Лучшее за неделю
           </h2>
@@ -443,7 +416,7 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
 
     
 {/* Волк и Заяц — мультсериал */}
-<section className="max-w-7xl mx-auto px-4 py-12">
+<section className="max-w-[1680px] mx-auto px-4 py-12">
   <h2 className="text-3xl font-black mb-3">
     🐺🐰 Волк и Заяц — наш мультсериал
   </h2>
@@ -496,7 +469,7 @@ href={i === 0 ? 'https://youtu.be/ZakbKsQnD3g' : buildHash({ name: 'post', id: p
   </a>
 </section>
   {/* Subscribe */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+      <section className="max-w-[1680px] mx-auto px-4 sm:px-6 py-10 sm:py-12">
         <div className="relative overflow-hidden bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 text-center">
           <div className="absolute inset-0 opacity-20"
             style={{

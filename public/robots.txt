@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /api/
 
-Sitemap: https://porzhali.ru/sitemap.xml
+Sitemap: https://kovalitskia72-art.github.io/porzahali/sitemap.xml

@@ -42,7 +42,7 @@ export function CategoryPage({ hasReacted, onReact, onNavigate, categoryId, show
 
   return (
     <div className="pt-16 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <div className="max-w-[1680px] mx-auto px-4 sm:px-6 py-8">
         <button
           onClick={() => onNavigate({ name: 'home' })}
           className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-orange-600 transition-colors mb-4"

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'ПОРЖАЛИ',
   slogan: 'Порция юмора на сегодня',
   tagline: 'Здесь смеются каждый день',
-  url: 'https://porzhali.ru',
+  url: 'https://kovalitskia72-art.github.io/porzahali',
   vkUrl: 'https://vk.com/porzhali',
   apiUrl: '/api',
   description:
