@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#fb7185"/><stop offset="1" stop-color="#9333ea"/></linearGradient><filter id="shadow"><feDropShadow dx="5" dy="7" stdDeviation="4" flood-opacity=".37"/></filter><pattern id="dots" width="27" height="27" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2" fill="#fff" opacity=".26"/></pattern></defs>
+<rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#dots)"/>
+<path d="M580 0L770 675M820 0L360 675M1100 0L80 675M1200 220L0 630" stroke="#fff" stroke-opacity=".09" stroke-width="100"/>
+<ellipse cx="900" cy="350" rx="295" ry="270" fill="#fff" fill-opacity=".16"/><ellipse cx="920" cy="350" rx="215" ry="198" fill="#fff" fill-opacity=".15"/>
+<g filter="url(#shadow)"><path d="M35 80L615 46L647 408L28 436Z" fill="#101827" stroke="#fff" stroke-width="9"/>
+<text x="67" y="190" fill="#fff" font-family="Arial Black,Arial,DejaVu Sans,sans-serif" font-size="65" font-weight="900" letter-spacing="-2">НИЧЕГО</text><text x="67" y="295" fill="#fff" font-family="Arial Black,Arial,DejaVu Sans,sans-serif" font-size="65" font-weight="900" letter-spacing="-2">НЕ ХОЧУ НА ДР</text>
+</g>
+<ellipse cx="900" cy="425" rx="255" ry="175" fill="#ffffff" opacity=".22"/><text x="760" y="420" font-size="230">🎂</text><text x="850" y="460" text-anchor="middle" font-size="260" font-family="Segoe UI Emoji,Apple Color Emoji,Noto Color Emoji,sans-serif">🎁</text><g transform="translate(757 60)"><rect width="310" height="76" rx="22" fill="#fff" stroke="#171717" stroke-width="7"/><path d="M25 73L20 104L72 74" fill="#fff" stroke="#171717" stroke-width="7"/><text x="18" y="51" font-family="Arial,DejaVu Sans,sans-serif" font-size="30" font-weight="900" fill="#171717">ОЙ, ТЫ ЧТО!</text></g>
+<g filter="url(#shadow)"><path d="M35 506L685 492L714 586L28 598Z" fill="#fde047" stroke="#101827" stroke-width="7"/>
+<text x="70" y="563" fill="#101827" font-family="Arial Black,Arial,DejaVu Sans,sans-serif" font-weight="900" font-size="32">ПОДАРОК ВСЁ-ТАКИ НУЖЕН!</text></g>
+<rect x="959" y="618" width="206" height="39" rx="13" fill="#101827" opacity=".93"/>
+<text x="1062" y="646" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="25" font-weight="900">ПОРЖАЛИ</text>
+</svg>
