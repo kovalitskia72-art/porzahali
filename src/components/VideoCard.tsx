@@ -27,7 +27,7 @@ export function VideoCard({ video, removable, onRemove }: { video: HumorVideo; r
   const youtubeId = video.source === 'youtube' ? getYouTubeId(video.url) : null;
 
   return (
-    <article className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
+    <article className="group overflow-hidden rounded-2xl border border-orange-100 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative aspect-video bg-gray-900 overflow-hidden">
         {video.source === 'mp4' ? (
           <video
@@ -45,7 +45,7 @@ export function VideoCard({ video, removable, onRemove }: { video: HumorVideo; r
   target="_blank"
   rel="noopener noreferrer"
 
-className="w-full h-full flex flex-col items-center justify-center gap-3 bg-red-600 bg-cover bg-center text-white font-bold text-xl"
+className="relative flex h-full w-full flex-col items-center justify-center gap-3 bg-gray-950 bg-cover bg-center text-white transition-transform duration-300 group-hover:scale-[1.02]"
 
 style={{
   backgroundImage:
@@ -60,8 +60,8 @@ style={{
 
 
 >
-  <Play size={48} fill="currentColor" />
-  Смотреть на YouTube
+  <span className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/80 bg-orange-500/95 shadow-2xl transition-transform group-hover:scale-110"><Play size={30} fill="currentColor" /></span>
+  <span className="max-w-[90%] rounded-lg bg-yellow-300 px-3 py-2 text-center text-base font-black leading-tight text-gray-950 shadow-xl sm:text-lg">{video.title}</span>
 </a>
 
         ) : (
