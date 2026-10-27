@@ -71,14 +71,7 @@ export function PostVisual({
               </span>
             </div>
           </>
-        ) : (
-          <>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-950/85 via-gray-950/5 to-transparent" />
-            <div className="pointer-events-none absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2">
-              <span className="max-w-full rounded-md bg-gray-950/90 px-2.5 py-1.5 text-base font-black uppercase leading-tight text-white shadow-lg sm:text-xl">{post.title}</span>
-            </div>
-          </>
-        )}
+        ) : null
       </div>
     );
   }
@@ -159,7 +152,6 @@ export function PostVisual({
           <p className={`line-clamp-2 w-fit max-w-full rounded-md bg-gray-950/90 px-3 py-2 font-black uppercase leading-tight tracking-tight text-white shadow-xl ${titleSize}`}>
             {post.title}
           </p>
-          <span className="mt-1.5 inline-block max-w-full -rotate-1 rounded-md bg-yellow-300 px-3 py-1.5 text-base font-black uppercase leading-tight text-gray-950 shadow-lg sm:text-lg">ВОТ ЭТО ПОВОРОТ!</span>
         </div>
         <div className="flex items-center justify-between text-[10px] font-extrabold uppercase tracking-widest text-white/85">
           <span>Улыбнись, это про нас</span>
