@@ -7,7 +7,7 @@ interface Props {
 export function Footer({ onNavigate }: Props) {
   return (
     <footer className="bg-gray-900 text-gray-300 mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-[1680px] mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="text-2xl font-black text-white mb-2">
