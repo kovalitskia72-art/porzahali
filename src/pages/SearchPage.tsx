@@ -11,14 +11,24 @@ interface Props {
 }
 
 export function SearchPage({ hasReacted, onReact }: Props) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(() => {
+    const hashQuery = window.location.hash.split('?')[1] ?? '';
+    return new URLSearchParams(hashQuery).get('q') ?? '';
+  });
+  const updateQuery = (value: string) => {
+    setQuery(value);
+    // replaceState does not cause a route-change/scroll jump on each keystroke.
+    window.history.replaceState(null, '', value
+      ? '#/search?q=' + encodeURIComponent(value)
+      : '#/search');
+  };
   const [category, setCategory] = useState<CategoryId | null>(null);
   const results = useSearch(query, category);
 
   const hasFilters = query || category;
 
   const resetSearch = () => {
-    setQuery('');
+    updateQuery('');
     setCategory(null);
   };
 
@@ -38,14 +48,14 @@ export function SearchPage({ hasReacted, onReact }: Props) {
           <input
             type="text"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => updateQuery(e.target.value)}
             placeholder="Найти мем, историю или анекдот…"
             autoFocus
             className="w-full pl-12 pr-12 py-4 text-base sm:text-lg bg-white border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-orange-400 transition-colors"
           />
           {query && (
             <button
-              onClick={() => setQuery('')}
+              onClick={() => updateQuery('')}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
               aria-label="Очистить запрос"
             >
