@@ -71,7 +71,7 @@ export function PostVisual({
               </span>
             </div>
           </>
-        ) : null
+        ) : null}
       </div>
     );
   }
