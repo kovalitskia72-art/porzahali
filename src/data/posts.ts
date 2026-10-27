@@ -21,7 +21,7 @@ export const posts: Post[] = [
     readTime: 2,
     views: 1861,
     reactions: { like: 342, funny: 891, fire: 456, wow: 78 },
-    visual: { type: 'image', text: '🛏️', gradient: 'from-sky-400 to-blue-600', imageUrl: '/porzahali/images/editorial/post-1.jpg', overlayTitle: 'ЛЁГ ПОСПАТЬ ПОРАНЬШЕ', overlayAccent: 'И ВОТ УЖЕ УТРО!' },
+    visual: { type: 'image', text: '🛏️', gradient: '', imageUrl: '/porzahali/images/featured-covers/post-1.webp' },
     featured: true,
   },
   {
@@ -100,7 +100,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 938,
     reactions: { like: 892, funny: 1567, fire: 423, wow: 89 },
-    visual: { type: 'image', text: '⏰', gradient: 'from-orange-400 to-amber-600', imageUrl: '/porzahali/images/editorial/post-4.jpg', overlayTitle: 'Я БЫСТРО, НА 5 МИНУТ', overlayAccent: 'СПУСТЯ ЦЕЛЫЙ ЧАС' },
+    visual: { type: 'image', text: '⏰', gradient: '', imageUrl: '/porzahali/images/featured-covers/post-4.webp' },
   },
   {
     id: '5',
@@ -195,7 +195,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 4432,
     reactions: { like: 345, funny: 567, fire: 234, wow: 678 },
-    visual: { type: 'image', text: '🧠', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-memes-approved.avif', imageFallbackUrl: '/porzahali/images/life-philosophical-queue.svg', atlasIndex: 0 },
+    visual: { type: 'image', text: '🧠', gradient: '', imageUrl: '/porzahali/images/featured-covers/post-8.webp' },
   },
   {
     id: '9',
@@ -382,7 +382,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 1169,
     reactions: { like: 456, funny: 1234, fire: 345, wow: 567 },
-    visual: { type: 'image', text: '🛒', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-memes-approved.avif', imageFallbackUrl: '/porzahali/images/life-supermarket-queue.svg', atlasIndex: 1 },
+    visual: { type: 'image', text: '🛒', gradient: '', imageUrl: '/porzahali/images/featured-covers/post-15.webp' },
   },
   {
     id: '16',
@@ -593,7 +593,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 4487,
     reactions: { like: 1234, funny: 890, fire: 567, wow: 234 },
-    visual: { type: 'image', text: '🏃', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-memes-approved.avif', imageFallbackUrl: '/porzahali/images/life-gym-after-35.svg', atlasIndex: 2 },
+    visual: { type: 'image', text: '🏃', gradient: '', imageUrl: '/porzahali/images/featured-covers/post-23.webp' },
   },
   {
     id: '24',
@@ -785,7 +785,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 2798,
     reactions: { like: 2345, funny: 1567, fire: 456, wow: 123 },
-    visual: { type: 'image', text: '⏰', gradient: 'from-indigo-400 to-blue-600', imageUrl: '/porzahali/images/life-memes-approved.avif', imageFallbackUrl: '/porzahali/images/life-mom-calls-eight.svg', atlasIndex: 3 },
+    visual: { type: 'image', text: '⏰', gradient: '', imageUrl: '/porzahali/images/featured-covers/post-30.webp' },
   },
 
   {
@@ -806,12 +806,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 0,
     reactions: { like: 0, funny: 0, fire: 0, wow: 0 },
-    visual: {
-      type: 'image',
-      text: '🏖️',
-      gradient: '',
-    imageUrl: '/porzahali/images/plan-vyhodnye.png.png',
-    },
+    visual: { type: 'image', text: '🏖️', gradient: '', imageUrl: '/porzahali/images/featured-covers/post-31.webp' },
   },
 
 
@@ -831,11 +826,6 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 0,
     reactions: { like: 0, funny: 0, fire: 0, wow: 0 },
-    visual: {
-      type: 'image',
-      text: '💸',
-      gradient: '',
-      imageUrl: '/porzahali/images/zarplata.png',
-    },
+    visual: { type: 'image', text: '💸', gradient: '', imageUrl: '/porzahali/images/featured-covers/post-32.webp' },
   },
 ];
