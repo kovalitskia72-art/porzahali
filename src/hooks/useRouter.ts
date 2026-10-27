@@ -11,7 +11,7 @@ export type Route =
 function parseHash(): Route {
   const hash = window.location.hash.replace(/^#/, '') || '/';
   if (hash === '/' || hash === '') return { name: 'home' };
-  if (hash === '/search') return { name: 'search' };
+  if (hash === '/search' || hash.startsWith('/search?')) return { name: 'search' };
   if (hash === '/videos') return { name: 'videos' };
   if (hash === '/all') return { name: 'all' };
   const postMatch = hash.match(/^\/post\/(.+)$/);
