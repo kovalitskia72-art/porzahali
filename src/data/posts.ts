@@ -47,7 +47,7 @@ export const posts: Post[] = [
     views: 2013,
     reactions: { like: 567, funny: 1203, fire: 789, wow: 134 },
     
-visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/images/kot-nachalnik.png..png' },
+visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/images/meme-covers/approved-post-2.webp' },
     featured: true,
   },
   {
@@ -77,7 +77,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 797,
     reactions: { like: 234, funny: 678, fire: 345, wow: 56 },
-    visual: { type: 'image', text: '💬', gradient: 'from-violet-400 to-purple-600', imageUrl: '/porzahali/images/editorial/post-3.jpg', overlayTitle: 'РАБОЧИЙ ЧАТ', overlayAccent: 'В ТРИ ЧАСА НОЧИ!' },
+    visual: { type: 'image', text: '💬', gradient: '', imageUrl: '/porzahali/images/meme-covers/approved-post-3.webp' },
     featured: true,
   },
   {
@@ -118,7 +118,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 1637,
     reactions: { like: 445, funny: 1234, fire: 234, wow: 45 },
-    visual: { type: 'image', text: '🍞', gradient: 'from-rose-400 to-red-600', imageUrl: '/porzahali/images/editorial/post-5.jpg', overlayTitle: 'ПРОГРАММИСТ И ХЛЕБ', overlayAccent: 'НЕ ТАК ПОНЯЛ ЗАДАЧУ' },
+    visual: { type: 'image', text: '🍞', gradient: '', imageUrl: '/porzahali/images/meme-covers/approved-post-5.webp' },
   },
   {
     id: '6',
@@ -275,7 +275,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 4438,
     reactions: { like: 345, funny: 987, fire: 123, wow: 45 },
-    visual: { type: 'image', text: '🏥', gradient: 'from-rose-400 to-red-600', imageUrl: '/porzahali/images/editorial/post-11.jpg', overlayTitle: 'ДОКТОР, У МЕНЯ ПРОБЛЕМА', overlayAccent: 'ОТВЕТ УДИВИЛ!' },
+    visual: { type: 'image', text: '🏥', gradient: '', imageUrl: '/porzahali/images/meme-covers/approved-post-11.webp' },
   },
   {
     id: '12',
@@ -359,7 +359,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 2315,
     reactions: { like: 789, funny: 1234, fire: 567, wow: 89 },
-    visual: { type: 'image', text: '🧹', gradient: 'from-yellow-400 to-orange-600', imageUrl: '/porzahali/images/editorial/post-14.jpg', overlayTitle: 'ПРОСТО УБЕРИ КУХНЮ', overlayAccent: 'ПРОСТО?!' },
+    visual: { type: 'image', text: '🧹', gradient: '', imageUrl: '/porzahali/images/meme-covers/approved-post-14.webp' },
   },
   {
     id: '15',
@@ -480,7 +480,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 2078,
     reactions: { like: 567, funny: 1456, fire: 678, wow: 89 },
-    visual: { type: 'image', text: '🔨', gradient: 'from-sky-400 to-blue-600', imageUrl: '/porzahali/images/editorial/post-19.jpg', overlayTitle: 'СОСЕД ДЕЛАЕТ РЕМОНТ', overlayAccent: 'ТРЕТИЙ ГОД!' },
+    visual: { type: 'image', text: '🔨', gradient: '', imageUrl: '/porzahali/images/meme-covers/approved-post-19.webp' },
   },
   {
     id: '20',
@@ -539,7 +539,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 3237,
     reactions: { like: 2345, funny: 678, fire: 345, wow: 56 },
-    visual: { type: 'image', text: '🎁', gradient: 'from-pink-400 to-rose-600', imageUrl: '/porzahali/images/editorial/post-21.jpg', overlayTitle: 'НИЧЕГО НЕ ХОЧУ НА ДР', overlayAccent: 'А ПОТОМ...' },
+    visual: { type: 'image', text: '🎁', gradient: '', imageUrl: '/porzahali/images/meme-covers/approved-post-21.webp' },
   },
   {
     id: '22',
@@ -727,7 +727,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 679,
     reactions: { like: 1234, funny: 2890, fire: 567, wow: 89 },
-    visual: { type: 'image', text: '🎧', gradient: 'from-violet-400 to-purple-600', imageUrl: '/porzahali/images/editorial/post-28.jpg', overlayTitle: 'ТЕХПОДДЕРЖКА', overlayAccent: 'ПЕРЕЗАГРУЗИТЕ ЕЩЁ РАЗ!' },
+    visual: { type: 'image', text: '🎧', gradient: '', imageUrl: '/porzahali/images/meme-covers/approved-post-28.webp' },
   },
   {
     id: '29',
