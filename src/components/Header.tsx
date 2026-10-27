@@ -66,7 +66,7 @@ export function Header({ currentRoute, onNavigate }: Props) {
               </span>
             </a>
 
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden 2xl:flex items-center gap-1">
               <button
                 onClick={() => onNavigate({ name: 'videos' })}
                 className={`px-3 py-2 text-sm font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 ${
@@ -111,7 +111,7 @@ export function Header({ currentRoute, onNavigate }: Props) {
               </a>
               <button
                 onClick={() => setOpen(!open)}
-                className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+                className="2xl:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
                 aria-label="Меню"
               >
                 {open ? <X size={24} /> : <Menu size={24} />}
@@ -123,7 +123,7 @@ export function Header({ currentRoute, onNavigate }: Props) {
 
       {/* Full-screen mobile menu */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 2xl:hidden transition-opacity duration-300 ${
           open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
