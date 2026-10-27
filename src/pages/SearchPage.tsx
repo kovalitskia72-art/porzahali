@@ -24,7 +24,8 @@ export function SearchPage({ hasReacted, onReact }: Props) {
 
   return (
     <div className="pt-16 min-h-screen">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      <div className="max-w-[1680px] mx-auto px-4 sm:px-6 py-8">
+        <div className="max-w-4xl">
         <h1 className="text-page-title font-black text-gray-900 mb-6">
           Поиск
         </h1>
@@ -97,8 +98,10 @@ export function SearchPage({ hasReacted, onReact }: Props) {
           )}
         </div>
 
+        </div>
+
         {results.length > 0 ? (
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {results.map((post) => (
               <PostCard key={post.id} post={post} hasReacted={hasReacted} onReact={onReact} />
             ))}
