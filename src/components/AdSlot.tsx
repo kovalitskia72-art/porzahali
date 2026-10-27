@@ -4,6 +4,10 @@ interface Props {
 }
 
 export function AdSlot({ variant = 'inline', className = '' }: Props) {
+  // Reserve preview slots while developing; do not display empty ad placeholders
+  // to visitors until a real advertising integration is configured.
+  if (!import.meta.env.DEV) return null;
+
   const styles: Record<string, string> = {
     inline: 'h-24 sm:h-28',
     sidebar: 'h-64',
