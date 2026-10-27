@@ -3,7 +3,7 @@ export const siteConfig = {
   slogan: 'Порция юмора на сегодня',
   tagline: 'Здесь смеются каждый день',
   url: 'https://kovalitskia72-art.github.io/porzahali',
-  vkUrl: 'https://vk.com/porzhali',
+  vkUrl: 'https://vk.ru/club242639666',
   apiUrl: '/api',
   description:
     'ПОРЖАЛИ — мемы, смешные истории, анекдоты, переписки и жизненный юмор. Порция юмора на каждый день.',
