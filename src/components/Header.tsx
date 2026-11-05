@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Search, ExternalLink, Film } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Menu, X, Search, ExternalLink, Film, ChevronDown } from 'lucide-react';
 import { siteConfig, navItems } from '@/config/site';
 import { buildHash, type Route } from '@/hooks/useRouter';
 
@@ -10,6 +10,8 @@ interface Props {
 
 export function Header({ currentRoute, onNavigate }: Props) {
   const [open, setOpen] = useState(false);
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
+  const categoriesRef = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -30,11 +32,23 @@ export function Header({ currentRoute, onNavigate }: Props) {
   }, [open]);
 
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        setCategoriesOpen(false);
+      }
     };
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
+    const handleOutsideClick = (event: PointerEvent) => {
+      if (categoriesRef.current && !categoriesRef.current.contains(event.target as Node)) {
+        setCategoriesOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
+    document.addEventListener('pointerdown', handleOutsideClick);
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('pointerdown', handleOutsideClick);
+    };
   }, []);
 
   const isActive = (id: string): boolean =>
@@ -43,7 +57,14 @@ export function Header({ currentRoute, onNavigate }: Props) {
   const handleNav = (id: string) => {
     onNavigate({ name: 'category', id });
     setOpen(false);
+    setCategoriesOpen(false);
   };
+
+  // Keep the most visited destinations visible at ordinary laptop widths;
+  // all eight categories remain one click away in the dropdown.
+  const quickCategories = navItems.filter((item) =>
+    ['memy', 'zhizn', 'anekdoty'].includes(item.id)
+  );
 
   return (
     <>
@@ -66,30 +87,66 @@ export function Header({ currentRoute, onNavigate }: Props) {
               </span>
             </a>
 
-            <nav className="hidden 2xl:flex items-center gap-1">
+            <nav className="hidden lg:flex min-w-0 items-center gap-1" aria-label="Разделы сайта">
               <button
-                onClick={() => onNavigate({ name: 'videos' })}
-                className={`px-3 py-2 text-sm font-bold rounded-lg transition-colors inline-flex items-center gap-1.5 ${
+                onClick={() => {
+                  setCategoriesOpen(false);
+                  onNavigate({ name: 'videos' });
+                }}
+                className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-bold transition-colors ${
                   currentRoute.name === 'videos'
-                    ? 'text-orange-600 bg-orange-50'
-                    : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50'
+                    ? 'bg-orange-50 text-orange-600'
+                    : 'text-gray-600 hover:bg-orange-50 hover:text-orange-600'
                 }`}
               >
                 <Film size={16} /> Видео
               </button>
-              {navItems.map((item) => (
+              {quickCategories.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleNav(item.id)}
-                  className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${
+                  aria-current={isActive(item.id) ? 'page' : undefined}
+                  className={`whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isActive(item.id)
-                      ? 'text-orange-600 bg-orange-50'
-                      : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50'
+                      ? 'bg-orange-50 text-orange-600'
+                      : 'text-gray-600 hover:bg-orange-50 hover:text-orange-600'
                   }`}
                 >
                   {item.label}
                 </button>
               ))}
+              <div className="relative" ref={categoriesRef}>
+                <button
+                  onClick={() => setCategoriesOpen((current) => !current)}
+                  aria-expanded={categoriesOpen}
+                  aria-haspopup="true"
+                  className={`inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
+                    categoriesOpen || (currentRoute.name === 'category' && !quickCategories.some((item) => isActive(item.id)))
+                      ? 'bg-orange-50 text-orange-600'
+                      : 'text-gray-600 hover:bg-orange-50 hover:text-orange-600'
+                  }`}
+                >
+                  Все рубрики <ChevronDown size={16} aria-hidden="true" />
+                </button>
+                {categoriesOpen && (
+                  <div className="absolute right-0 top-full z-50 mt-2 max-h-[75vh] w-64 overflow-y-auto rounded-2xl border border-gray-100 bg-white p-2 shadow-2xl">
+                    {navItems.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => handleNav(item.id)}
+                        aria-current={isActive(item.id) ? 'page' : undefined}
+                        className={`block w-full rounded-xl px-4 py-3 text-left text-sm font-semibold transition-colors ${
+                          isActive(item.id)
+                            ? 'bg-orange-50 text-orange-600'
+                            : 'text-gray-700 hover:bg-orange-50 hover:text-orange-600'
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </nav>
 
             <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
@@ -111,7 +168,7 @@ export function Header({ currentRoute, onNavigate }: Props) {
               </a>
               <button
                 onClick={() => setOpen(!open)}
-                className="2xl:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+                className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
                 aria-label="Меню"
               >
                 {open ? <X size={24} /> : <Menu size={24} />}
@@ -123,7 +180,7 @@ export function Header({ currentRoute, onNavigate }: Props) {
 
       {/* Full-screen mobile menu */}
       <div
-        className={`fixed inset-0 z-40 2xl:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${
           open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
