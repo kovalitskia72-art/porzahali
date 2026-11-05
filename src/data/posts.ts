@@ -140,7 +140,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 770,
     reactions: { like: 678, funny: 234, fire: 890, wow: 123 },
-    visual: { type: 'image', text: '💔', gradient: 'from-pink-400 to-rose-600', imageUrl: '/porzahali/images/editorial/post-6.jpg', overlayTitle: 'ВЫБИРАЙ: Я ИЛИ ДРУЗЬЯ?', overlayAccent: 'А ВОТ И ОТВЕТ!' },
+    visual: { type: 'image', text: '💔', gradient: '', imageUrl: '/porzahali/images/relationships-approved.avif', imageFallbackUrl: '/porzahali/images/editorial/post-6.jpg', atlasIndex: 0 },
   },
   {
     id: '7',
@@ -333,7 +333,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 3,
     views: 775,
     reactions: { like: 1890, funny: 567, fire: 234, wow: 78 },
-    visual: { type: 'image', text: '🍝', gradient: 'from-pink-400 to-rose-600', imageUrl: '/porzahali/images/editorial/post-13.jpg', overlayTitle: 'ПЕРВОЕ СВИДАНИЕ', overlayAccent: 'УЖИН СВОИМИ РУКАМИ' },
+    visual: { type: 'image', text: '🍝', gradient: '', imageUrl: '/porzahali/images/relationships-approved.avif', imageFallbackUrl: '/porzahali/images/editorial/post-13.jpg', atlasIndex: 1 },
   },
   {
     id: '14',
@@ -539,7 +539,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 3237,
     reactions: { like: 2345, funny: 678, fire: 345, wow: 56 },
-    visual: { type: 'image', text: '🎁', gradient: '', imageUrl: '/porzahali/images/meme-covers/approved-post-21.webp' },
+    visual: { type: 'image', text: '🎁', gradient: '', imageUrl: '/porzahali/images/relationships-approved.avif', imageFallbackUrl: '/porzahali/images/meme-covers/approved-post-21.webp', atlasIndex: 2 },
   },
   {
     id: '22',
@@ -754,7 +754,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 5189,
     reactions: { like: 1567, funny: 890, fire: 234, wow: 45 },
-    visual: { type: 'image', text: '🧣', gradient: 'from-pink-400 to-rose-600', imageUrl: '/porzahali/images/editorial/post-29.jpg', overlayTitle: 'ОДЕНЬСЯ ТЕПЛО', overlayAccent: 'А Я ДУМАЛ...' },
+    visual: { type: 'image', text: '🧣', gradient: '', imageUrl: '/porzahali/images/relationships-approved.avif', imageFallbackUrl: '/porzahali/images/editorial/post-29.jpg', atlasIndex: 3 },
   },
   {
     id: '30',
