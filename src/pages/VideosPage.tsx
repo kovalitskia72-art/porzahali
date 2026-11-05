@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Film, Plus, Sparkles } from 'lucide-react';
+import { ExternalLink, Film, Plus, Sparkles } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 import { AddVideoModal } from '@/components/AddVideoModal';
 import { VideoCard } from '@/components/VideoCard';
 import { useVideos } from '@/hooks/useVideos';
@@ -38,6 +39,21 @@ export function VideosPage() {
 <h2 className="text-2xl font-black mb-5">
   🐺🐰 Волк и Заяц — мультсериал
 </h2>
+<div className="mb-6 flex flex-col gap-4 rounded-2xl border border-orange-200 bg-orange-50 p-5 sm:flex-row sm:items-center sm:justify-between">
+  <div>
+    <p className="text-base font-black text-gray-900">Сезон 1 — все три серии</p>
+    <p className="mt-1 text-sm text-gray-600">«Выборы», «После выборов» и «Первый указ мэра» — в одном плейлисте.</p>
+  </div>
+  <a
+    href={siteConfig.vkPlaylistUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-orange-600 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-orange-700"
+  >
+    Смотреть сезон в VK Видео
+    <ExternalLink size={17} aria-hidden="true" />
+  </a>
+</div>
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
   {videos

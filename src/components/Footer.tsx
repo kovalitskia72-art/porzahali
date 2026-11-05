@@ -89,6 +89,14 @@ export function Footer({ onNavigate }: Props) {
             >
               Мы во ВКонтакте
             </a>
+            <a
+              href={siteConfig.vkPlaylistUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 block text-sm font-semibold text-orange-300 hover:text-orange-200"
+            >
+              🐺🐰 Волк и Заяц — весь первый сезон ↗
+            </a>
             <p className="text-xs text-gray-500 mt-3">
               © 2026 ПОРЖАЛИ. Юмор каждый день.
             </p>

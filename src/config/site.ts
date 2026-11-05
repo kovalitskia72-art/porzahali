@@ -4,6 +4,7 @@ export const siteConfig = {
   tagline: 'Здесь смеются каждый день',
   url: 'https://kovalitskia72-art.github.io/porzahali',
   vkUrl: 'https://vk.ru/club242639666',
+  vkPlaylistUrl: 'https://vkvideo.ru/playlist/-242639666_1',
   apiUrl: '/api',
   description:
     'ПОРЖАЛИ — мемы, смешные истории, анекдоты, переписки и жизненный юмор. Порция юмора на каждый день.',

@@ -108,11 +108,11 @@ export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
             {/* Hero: showcase our own cartoon, followed by two real featured articles. */}
             <div className="hidden lg:grid grid-cols-2 gap-4">
               <a
-                href="https://youtu.be/ZakbKsQnD3g"
+                href={siteConfig.vkPlaylistUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group col-span-2 overflow-hidden rounded-2xl border border-orange-100 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
-                aria-label="Смотреть первый эпизод мультсериала Волк и Заяц"
+                aria-label="Смотреть первый сезон мультсериала Волк и Заяц в VK Видео"
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -125,14 +125,14 @@ export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
                     🐺🐰 Наш мультсериал
                   </span>
                   <span className="absolute bottom-3 right-3 rounded-lg bg-orange-500 px-3 py-2 text-sm font-bold text-white shadow-md">
-                    ▶ Смотреть серию 1
+                    ▶ Смотреть весь сезон
                   </span>
                 </div>
                 <div className="flex items-center justify-between gap-3 p-3.5">
                   <h3 className="font-black text-gray-950 transition-colors group-hover:text-orange-600">
-                    Волк и Заяц — Выборы
+                    Волк и Заяц — Сезон 1
                   </h3>
-                  <span className="shrink-0 text-xs font-bold text-orange-600">На YouTube ↗</span>
+                  <span className="shrink-0 text-xs font-bold text-orange-600">В VK Видео ↗</span>
                 </div>
               </a>
               {featured.map((post) => (
@@ -421,7 +421,7 @@ export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
     🐺🐰 Волк и Заяц — наш мультсериал
   </h2>
   <p className="text-gray-600 mb-6">
-    Два героя, большие амбиции и смешные приключения!
+    Все три серии первого сезона в правильном порядке — смотри продолжение приключений Волка и Зайца!
   </p>
 
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -462,10 +462,12 @@ export function HomePage({ hasReacted, onReact, onNavigate }: Props) {
   </div>
 
   <a
-    href="/porzahali/#/videos"
-    className="mt-8 inline-block bg-orange-600 text-white font-bold px-6 py-3 rounded-xl"
+    href={siteConfig.vkPlaylistUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-8 inline-block bg-orange-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-orange-700 transition-colors"
   >
-    Смотреть все серии →
+    Смотреть весь сезон в VK Видео →
   </a>
 </section>
   {/* Subscribe */}
