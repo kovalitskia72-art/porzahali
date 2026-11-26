@@ -26,6 +26,7 @@ export interface Post {
   imageUrl?: string;
   imageFallbackUrl?: string;
   atlasIndex?: 0 | 1 | 2 | 3;
+  atlasRows?: 1 | 2;
   overlayTitle?: string;
   overlayAccent?: string;
   };

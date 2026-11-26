@@ -23,6 +23,7 @@ export function PostVisual({
   ) {
     const column = post.visual.atlasIndex % 2;
     const row = Math.floor(post.visual.atlasIndex / 2);
+    const atlasRows = post.visual.atlasRows ?? 2;
     return (
       <div className={`relative isolate overflow-hidden bg-gray-100 ${className}`}>
         <img
@@ -31,8 +32,9 @@ export function PostVisual({
           loading="lazy"
           decoding="async"
           onError={() => setUseFallback(true)}
-          className="absolute h-[200%] w-[200%] max-w-none object-fill"
+          className="absolute w-[200%] max-w-none object-fill"
           style={{
+            height: `${atlasRows * 100}%`,
             left: column === 0 ? '0%' : '-100%',
             top: row === 0 ? '0%' : '-100%',
           }}

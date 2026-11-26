@@ -453,7 +453,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 4076,
     reactions: { like: 456, funny: 1234, fire: 234, wow: 45 },
-    visual: { type: 'image', text: '🐱', gradient: 'from-rose-400 to-red-600', imageUrl: '/porzahali/images/editorial/post-18.jpg', overlayTitle: 'КОТ И РАБОТА', overlayAccent: 'КТО ЗДЕСЬ НАЧАЛЬНИК?' },
+    visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/images/anekdoty-fixed-2cards.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-18.jpg', atlasIndex: 0, atlasRows: 1 },
   },
   {
     id: '19',
@@ -662,7 +662,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 1378,
     reactions: { like: 678, funny: 1567, fire: 234, wow: 45 },
-    visual: { type: 'image', text: '🍎', gradient: '', imageUrl: '/porzahali/images/family-anecdotes-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-26.jpg', atlasIndex: 3 },
+    visual: { type: 'image', text: '🍎', gradient: '', imageUrl: '/porzahali/images/anekdoty-fixed-2cards.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-26.jpg', atlasIndex: 1, atlasRows: 1 },
   },
   {
     id: '27',
