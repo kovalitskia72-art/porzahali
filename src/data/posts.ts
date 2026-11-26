@@ -165,7 +165,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 1894,
     reactions: { like: 567, funny: 789, fire: 345, wow: 234 },
-    visual: { type: 'image', text: '👶', gradient: 'from-yellow-400 to-orange-600', imageUrl: '/porzahali/images/editorial/post-7.jpg', overlayTitle: 'ОТКУДА БЕРУТСЯ ДЕТИ?', overlayAccent: 'ПАПА НЕ ГОТОВ!' },
+    visual: { type: 'image', text: '👶', gradient: '', imageUrl: '/porzahali/images/family-anecdotes-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-7.jpg', atlasIndex: 0 },
   },
   {
     id: '8',
@@ -566,7 +566,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 3,
     views: 539,
     reactions: { like: 1567, funny: 890, fire: 234, wow: 123 },
-    visual: { type: 'image', text: '📱', gradient: 'from-yellow-400 to-orange-600', imageUrl: '/porzahali/images/editorial/post-22.jpg', overlayTitle: 'БАБУШКА И ИНТЕРНЕТ', overlayAccent: 'ЭПИЧЕСКАЯ БИТВА!' },
+    visual: { type: 'image', text: '📱', gradient: '', imageUrl: '/porzahali/images/family-anecdotes-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-22.jpg', atlasIndex: 1 },
   },
   {
     id: '23',
@@ -662,7 +662,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 1378,
     reactions: { like: 678, funny: 1567, fire: 234, wow: 45 },
-    visual: { type: 'image', text: '🍎', gradient: 'from-rose-400 to-red-600', imageUrl: '/porzahali/images/editorial/post-26.jpg', overlayTitle: 'УЧИТЕЛЬ И УЧЕНИК', overlayAccent: 'ОТВЕТ УДИВИЛ ВСЕХ' },
+    visual: { type: 'image', text: '🍎', gradient: '', imageUrl: '/porzahali/images/family-anecdotes-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-26.jpg', atlasIndex: 3 },
   },
   {
     id: '27',
