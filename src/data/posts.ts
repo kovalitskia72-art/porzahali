@@ -693,7 +693,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 3,
     views: 3171,
     reactions: { like: 890, funny: 1234, fire: 456, wow: 78 },
-    visual: { type: 'image', text: '🍳', gradient: 'from-sky-400 to-blue-600', imageUrl: '/porzahali/images/editorial/post-27.jpg', overlayTitle: 'ГОТОВЛЮ ПО РЕЦЕПТУ', overlayAccent: 'ЧТО ПОШЛО НЕ ТАК?!' },
+    visual: { type: 'image', text: '🍳', gradient: '', imageUrl: '/porzahali/images/istorii-recipe-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-27.jpg' },
   },
   {
     id: '28',
