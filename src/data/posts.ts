@@ -248,7 +248,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 5033,
     reactions: { like: 1234, funny: 2345, fire: 678, wow: 123 },
-    visual: { type: 'image', text: '💻', gradient: 'from-orange-400 to-red-500', imageUrl: '/porzahali/images/editorial/post-10.jpg', overlayTitle: 'СЕЙЧАС ПОРАБОТАЮ', overlayAccent: 'СПУСТЯ 3 ЧАСА' },
+    visual: { type: 'image', text: '💻', gradient: '', imageUrl: '/porzahali/images/memy-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-10.jpg', atlasIndex: 0 },
   },
   {
     id: '11',
@@ -434,7 +434,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 3843,
     reactions: { like: 1567, funny: 2890, fire: 1234, wow: 234 },
-    visual: { type: 'image', text: '😱', gradient: 'from-orange-400 to-red-500', imageUrl: '/porzahali/images/editorial/post-17.jpg', overlayTitle: 'ЭТО БЫСТРО, 5 МИНУТ', overlayAccent: 'МОЁ ЛИЦО:' },
+    visual: { type: 'image', text: '😱', gradient: '', imageUrl: '/porzahali/images/memy-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-17.jpg', atlasIndex: 1 },
   },
   {
     id: '18',
@@ -641,7 +641,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 1300,
     reactions: { like: 2345, funny: 3456, fire: 1234, wow: 345 },
-    visual: { type: 'image', text: '😩', gradient: 'from-orange-400 to-red-500', imageUrl: '/porzahali/images/editorial/post-25.jpg', overlayTitle: 'ОПЯТЬ ПОНЕДЕЛЬНИК', overlayAccent: 'А Я УЖЕ УСТАЛ!' },
+    visual: { type: 'image', text: '😩', gradient: '', imageUrl: '/porzahali/images/memy-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-25.jpg', atlasIndex: 2 },
   },
   {
     id: '26',
