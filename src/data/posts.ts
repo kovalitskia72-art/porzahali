@@ -219,7 +219,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 1486,
     reactions: { like: 234, funny: 890, fire: 456, wow: 67 },
-    visual: { type: 'image', text: '📢', gradient: 'from-emerald-400 to-teal-600', imageUrl: '/porzahali/images/editorial/post-9.jpg', overlayTitle: 'У НАС КРИКИНГ-КУЛЬТУРА', overlayAccent: 'ЧТО, ПРОСТИТЕ?!' },
+    visual: { type: 'image', text: '📢', gradient: '', imageUrl: '/porzahali/images/work-covers-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-9.jpg', atlasIndex: 0 },
   },
   {
     id: '10',
@@ -410,7 +410,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 4159,
     reactions: { like: 678, funny: 2345, fire: 890, wow: 123 },
-    visual: { type: 'image', text: '📹', gradient: 'from-emerald-400 to-teal-600', imageUrl: '/porzahali/images/editorial/post-16.jpg', overlayTitle: 'МОГЛО БЫТЬ ПИСЬМОМ', overlayAccent: 'НО НЕТ — СОЗВОН!' },
+    visual: { type: 'image', text: '📹', gradient: '', imageUrl: '/porzahali/images/work-covers-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-16.jpg', atlasIndex: 1 },
   },
   {
     id: '17',
@@ -619,7 +619,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 2919,
     reactions: { like: 567, funny: 1890, fire: 345, wow: 89 },
-    visual: { type: 'image', text: '🤝', gradient: 'from-emerald-400 to-teal-600', imageUrl: '/porzahali/images/editorial/post-24.jpg', overlayTitle: 'ДРУЖНЫЙ КОЛЛЕКТИВ', overlayAccent: 'КОНЕЧНО-КОНЕЧНО!' },
+    visual: { type: 'image', text: '🤝', gradient: '', imageUrl: '/porzahali/images/work-covers-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-24.jpg', atlasIndex: 2 },
   },
   {
     id: '25',
