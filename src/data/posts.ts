@@ -304,7 +304,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 1,
     views: 5397,
     reactions: { like: 2345, funny: 1567, fire: 890, wow: 123 },
-    visual: { type: 'image', text: '🍲', gradient: 'from-violet-400 to-purple-600', imageUrl: '/porzahali/images/editorial/post-12.jpg', overlayTitle: 'МАМА: ТЫ ПОЕЛ?', overlayAccent: 'А ЧТО ИМЕННО?' },
+    visual: { type: 'image', text: '🍲', gradient: '', imageUrl: '/porzahali/images/perepiski-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-12.jpg', atlasIndex: 0, atlasRows: 1 },
   },
   {
     id: '13',
@@ -511,7 +511,7 @@ visual: { type: 'image', text: '🐱', gradient: '', imageUrl: '/porzahali/image
     readTime: 2,
     views: 4067,
     reactions: { like: 890, funny: 2345, fire: 456, wow: 78 },
-    visual: { type: 'image', text: '🍕', gradient: 'from-violet-400 to-purple-600', imageUrl: '/porzahali/images/editorial/post-20.jpg', overlayTitle: 'КУРЬЕР ИЩЕТ ДОМ', overlayAccent: 'ПИЦЦА ОСТЫНЕТ!' },
+    visual: { type: 'image', text: '🍕', gradient: '', imageUrl: '/porzahali/images/perepiski-approved.jpg', imageFallbackUrl: '/porzahali/images/editorial/post-20.jpg', atlasIndex: 1, atlasRows: 1 },
   },
   {
     id: '21',
